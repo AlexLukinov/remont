@@ -618,7 +618,8 @@
                 Так же Вы можете оставить заявку для консультации.
                 Мы вам перезвоним!
             </p>
-            <form class="form_application" action="">
+            <form class="form_application" action="<?php echo esc_url( admin_url('admin-post.php') ); ?>" method="post">
+                <input type="hidden" name="action" value="energy_form">
 
                 <input class="input" name="name" type="text" placeholder="Ваше имя">
                 <input class="input" name="number_tel" type="text" placeholder="Номер телефона">
