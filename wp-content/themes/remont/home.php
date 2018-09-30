@@ -15,15 +15,19 @@
             integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl"
             crossorigin="anonymous">
     </script>
-    <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.lettering.js"></script>
-    <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.textillate.js"></script>
+
+    <script type="text/javascript" src='<?php echo get_template_directory_uri(); ?>/js/swiper.min.js'></script>
     <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/anime.min.js"></script>
     <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/path-slider.min.js"></script>
     <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/index.js"></script>
+    <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.lettering.js"></script>
+    <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.textillate.js"></script>
 
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/reset.min.css">
+    <link rel='stylesheet prefetch' href='<?php echo get_template_directory_uri(); ?>/css/swiper.min.css'>
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/style.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/font-awesome.min.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/animate.css">
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/style.css">
     <title>Ремонт компьютерной техники</title>
 </head>
 <body>
@@ -92,10 +96,33 @@
     </div>
     <div class="home">
         <div class="home_slider">
-            <div class="home_slider_img home_slider_img1"></div>
-            <div class="home_slider_img home_slider_img2" style="display: none"></div>
-            <div class="home_slider_img home_slider_img3" style="display: none"></div>
-            <div class="home_slider_img home_slider_img4" style="display: none"></div>
+            <div class="home_slider_img">
+                <div class="swiper-container main-slider loading">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <figure class="slide-bgimg" style="background-image:url(<?php echo get_template_directory_uri(); ?>/img/slider-foto1.jpg)">
+                                <img src="<?php echo get_template_directory_uri(); ?>/img/slider-foto1.jpg" class="entity-img" />
+                            </figure>
+                        </div>
+                        <div class="swiper-slide">
+                            <figure class="slide-bgimg" style="background-image:url(<?php echo get_template_directory_uri(); ?>/img/slider-foto2.jpg)">
+                                <img src="<?php echo get_template_directory_uri(); ?>/img/slider-foto2.jpg" class="entity-img" />
+                            </figure>
+                        </div>
+                        <div class="swiper-slide">
+                            <figure class="slide-bgimg" style="background-image:url(<?php echo get_template_directory_uri(); ?>/img/slider-foto3.jpg)">
+                                <img src="<?php echo get_template_directory_uri(); ?>/img/slider-foto3.jpg" class="entity-img" />
+                            </figure>
+                        </div>
+                        <div class="swiper-slide">
+                            <figure class="slide-bgimg" style="background-image:url(<?php echo get_template_directory_uri(); ?>/img/slider-foto4.jpg)">
+                                <img src="<?php echo get_template_directory_uri(); ?>/img/slider-foto4.jpg" class="entity-img" />
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="home_slider_content home_slider_content1">
                 <h2>Ремонт и настройка</h2>
                 <h3>компьютерной техники <br> и электронных устройств</h3>
@@ -582,7 +609,7 @@
 <div class="modal modal_application animated fadeIn" id="application" style="display: none">
     <div class="modal_left">
         <div class="close">
-            <img src="img/close.jpg" alt="Закрыть">
+            <img src="<?php echo get_template_directory_uri(); ?>/img/close.jpg" alt="Закрыть">
         </div>
         <div class="modal_content">
             <div class="logo logo_modal">MASTER GADGET</div>
@@ -603,7 +630,7 @@
         <div class="shadow shadow_modal">
             <div class="article_head_mob">
                 <a href="#" class="flex-img">
-                    <img src="img/arrow-back.png" alt="back">
+                    <img src="<?php echo get_template_directory_uri(); ?>/img/arrow-back.png" alt="back">
                 </a>
                 <div class="logo logo_menu_mob logo_modal_mob" >MASTER GADGET</div>
             </div>
@@ -632,7 +659,7 @@
 <div class="modal animated fadeIn" id="reviews" style="display: none">
     <div class="modal_left">
         <div class="close">
-            <img src="img/close.jpg" alt="Закрыть">
+            <img src="<?php echo get_template_directory_uri(); ?>/img/close.jpg" alt="Закрыть">
         </div>
         <div class="modal_content">
             <div class="logo logo_modal">MASTER GADGET</div>
@@ -652,7 +679,7 @@
         <div class="shadow shadow_modal">
             <div class="article_head_mob">
                 <div class="flex-img">
-                    <img src="img/arrow-back.png" alt="back">
+                    <img src="<?php echo get_template_directory_uri(); ?>/img/arrow-back.png" alt="back">
                 </div>
                 <div class="logo logo_menu_mob logo_modal_mob" >MASTER GADGET</div>
             </div>
