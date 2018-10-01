@@ -179,3 +179,38 @@ function review_form_handler() {
 add_action( 'admin_post_nopriv_review_form', 'review_form_handler' );
 add_action( 'admin_post_review_form', 'review_form_handler' );
 
+function zayavka_form_handler() {
+    $post_id = wp_insert_post(array (
+        'post_type' => 'zayavka',
+        'post_title' => $_POST['name'],
+        'post_status' => 'draft',
+    ));
+
+    if ($post_id) {
+        // insert post meta
+        add_post_meta($post_id, 'zayavka_text', $_POST['application']);
+        add_post_meta($post_id, 'zayavka_phone', $_POST['number_tel']);
+
+        $_SESSION['zayavka_success_message'] = '1';
+        wp_redirect( home_url() );
+        exit;
+    }
+
+    //отправка почты здесь
+    wp_mail("einstein701@gmail.com", "Subject", "Message");
+}
+add_action( 'admin_post_nopriv_zayavka_form', 'zayavka_form_handler' );
+add_action( 'admin_post_zayavka_form', 'zayavka_form_handler' );
+
+add_action( 'phpmailer_init', 'send_smtp_email' );
+function send_smtp_email( $phpmailer ) {
+    $phpmailer->isSMTP();
+    $phpmailer->Host       = SMTP_HOST;
+    $phpmailer->SMTPAuth   = SMTP_AUTH;
+    $phpmailer->Port       = SMTP_PORT;
+    $phpmailer->SMTPSecure = SMTP_SECURE;
+    $phpmailer->Username   = SMTP_USERNAME;
+    $phpmailer->Password   = SMTP_PASSWORD;
+    $phpmailer->From       = SMTP_FROM;
+    $phpmailer->FromName   = SMTP_FROMNAME;
+}
