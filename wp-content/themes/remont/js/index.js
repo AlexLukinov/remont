@@ -153,3 +153,9 @@ $(document).ready(function() { // вся мaгия пoсле зaгрузки с�
     });
 
 });
+jQuery(document).ready(function() {
+    jQuery('.section_services').addClass("hidden").viewportChecker({
+        classToAdd: 'visible animated fadeIn',
+        offset: 100
+    });
+});
