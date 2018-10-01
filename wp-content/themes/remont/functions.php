@@ -124,6 +124,8 @@ function remont_scripts() {
 
 	wp_enqueue_script( 'remont-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
+    wp_enqueue_script( 'ajax-functions', get_template_directory_uri() . '/js/ajax-functions.js', array(), '20151215', true );
+
 	wp_enqueue_script( 'remont-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -214,3 +216,27 @@ function send_smtp_email( $phpmailer ) {
     $phpmailer->From       = SMTP_FROM;
     $phpmailer->FromName   = SMTP_FROMNAME;
 }
+
+add_action( 'wp_enqueue_scripts', 'myajax_data', 99 );
+function myajax_data(){
+
+    wp_localize_script( 'ajax-functions', 'myajax',
+        array(
+            'url' => admin_url('admin-ajax.php')
+        )
+    );
+
+}
+
+function my_action_callback() {
+    $whatever = intval( $_POST['whatever'] );
+
+    echo $whatever + 10;
+
+    // выход нужен для того, чтобы в ответе не было ничего лишнего, только то что возвращает функция
+    wp_die();
+}
+
+add_action('wp_ajax_(action)', 'my_action_callback');
+add_action('wp_ajax_nopriv_(action)', 'my_action_callback');
+
