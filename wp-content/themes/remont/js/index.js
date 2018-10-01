@@ -145,3 +145,9 @@ $(document).ready(function() { // вся мaгия пoсле зaгрузки с�
     mainSlider.controller.control = navSlider;
     navSlider.controller.control = mainSlider;
 });
+jQuery(document).ready(function() {
+    jQuery('.section_services').addClass("hidden").viewportChecker({
+        classToAdd: 'visible animated fadeIn',
+        offset: 100
+    });
+});

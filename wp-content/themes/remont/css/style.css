@@ -2008,3 +2008,9 @@ and (min-width : 1919px) {
         margin: auto;
     }
 }
+.hidden{
+    opacity:0;
+}
+.visible{
+    opacity:1;
+}
