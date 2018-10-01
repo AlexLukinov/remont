@@ -159,3 +159,23 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+function review_form_handler() {
+    $post_id = wp_insert_post(array (
+        'post_type' => 'review',
+        'post_title' => $_POST['name'],
+        'post_status' => 'draft',
+    ));
+
+    if ($post_id) {
+        // insert post meta
+        add_post_meta($post_id, 'review_text', $_POST['application']);
+        add_post_meta($post_id, 'review_phone', $_POST['number_tel']);
+
+        $_SESSION['review_success_message'] = '1';
+        wp_redirect( home_url() );
+        exit;
+    }
+}
+add_action( 'admin_post_nopriv_review_form', 'review_form_handler' );
+add_action( 'admin_post_review_form', 'review_form_handler' );
+
