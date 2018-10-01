@@ -19,12 +19,16 @@
     <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/anime.min.js"></script>
     <script type="text/javascript" src='<?php echo get_template_directory_uri(); ?>/js/swiper.min.js'></script>
     <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/index.js"></script>
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/animate.css">
-<!--    <link rel="stylesheet" href="--><?php //echo get_template_directory_uri(); ?><!--/css/reset.min.css">-->
+    <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.lettering.js"></script>
+    <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.textillate.js"></script>
+    <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery-ui.min.js"></script>
+
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/reset.min.css">
     <link rel='stylesheet prefetch' href='<?php echo get_template_directory_uri(); ?>/css/swiper.min.css'>
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/style.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/font-awesome.min.css">
-
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/jquery-ui.css">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/animate.css">
     <title>Ремонт компьютерной техники</title>
 </head>
 <body>
@@ -142,14 +146,14 @@
             </div>
         </div>
         <div class="slider_progress">
-            <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/arrow-left.png" alt=""></a>
+            <a class="swiper-button-prev" href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/arrow-left.png" alt=""></a>
             <div class="slider_number">01</div>
             <svg width="144" height="1">
                 <path class="bg_svg" stroke="black" d="M0 10, 144 10"></path>
                 <path class="meter" stroke="#ffc100" d="M0 0, 36 10" style="stroke-dashoffset: 144;"></path>
             </svg>
             <div class="slider_number">04</div>
-            <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/arrow-right.png" alt=""></a>
+            <a class="swiper-button-next" href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/arrow-right.png" alt=""></a>
         </div>
     </div>
     <div class="nav-fixed">
@@ -311,49 +315,51 @@
 <section class="reviews">
     <h2>Отзывы клиентов</h2>
     <div class="reviews_block">
-        <div class="reviews_block_item">
-            <img class="img_reviews" src="<?php echo get_template_directory_uri(); ?>/img/reviews_avatar-girl.png" alt="">
-            <div class="reviews_name">Евгения</div>
-            <div class="reviews_content">
-                « Обращалась по ремонту ноутбука, очень довольна!
-                Пришёл молодой человек, который быстро и качественно
-                произвел замену клавиатуры. Отвечал на все интересующие
-                меня вопросы, давал советы.
-                Очень приятный, вежливый и симпатичный молодой человек!))) Спасибо ещё раз!) »
-            </div>
-        </div>
-        <div class="reviews_block_item rev-dn-mobile">
-            <img class="img_reviews" src="<?php echo get_template_directory_uri(); ?>/img/reviews_avatar-men.png" alt="">
-            <div class="reviews_name">Иван</div>
-            <div class="reviews_content">
-                «Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                Duis aute irure dolor in
-                reprehenderit in voluptate velit esse QQQQ quis nostrud exercitation ullamco laboris nisi »
-            </div>
-        </div>
-        <div class="reviews_block_item rev-dn-mobile">
-            <img class="img_reviews" src="<?php echo get_template_directory_uri(); ?>/img/reviews_avatar-girl.png" alt="">
-            <div class="reviews_name">Алла</div>
-            <div class="reviews_content">
-                « В современном мире пришлось и старым чайникам овладеть интернетом, но я
-                столкнулась с проблемой, как настроить ноутбук. Мне не удалось, он завис.
-                Помог настроить и отремонтировать специалист, и к тому же у себя дома. Я благодарна
-                Илье за вежливое, терпеливое и качественное обслуживание.»
-            </div>
-        </div>
-        <div class="reviews_block_item rev-dn-mobile">
-            <img class="img_reviews" src="<?php echo get_template_directory_uri(); ?>/img/reviews_avatar-men.png" alt="">
-            <div class="reviews_name">Иван</div>
-            <div class="reviews_content">
-                «Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-                aute irure dolor in reprehenderit
-                in voluptate velit esse QQQQ quis nostrud exercitation ullamco laboris nisi »
-            </div>
-        </div>
+
+
+
+        <?php
+        $args = array(
+            'post_type'   => 'review',
+            'post_status' => 'publish',
+            'posts_per_page' => 4,
+            'order' => 'DESC'
+        );
+
+        $articles = new WP_Query( $args );
+
+        if( $articles->have_posts() ) :
+            ?>
+
+            <?php
+            while( $articles->have_posts() ) :
+                $articles->the_post();
+                ?>
+
+                <div class="reviews_block_item">
+                    <?php $gender = get_post_meta( get_the_ID(), 'review_gender', true ); ?>
+                    <?php if (strtolower($gender) == 'м') { ?>
+                        <img class="img_reviews" src="<?php echo get_template_directory_uri(); ?>/img/reviews_avatar-men.png" alt="">
+                    <?php } else { ?>
+                        <img class="img_reviews" src="<?php echo get_template_directory_uri(); ?>/img/reviews_avatar-girl.png" alt="">
+                    <?php } ?>
+                    <div class="reviews_name"><?= the_title(); ?></div>
+                    <div class="reviews_content">
+                        « <?= get_post_meta( get_the_ID(), 'review_text', true ); ?> »
+                    </div>
+                </div>
+
+
+            <?php
+            endwhile;
+            wp_reset_postdata();
+            ?>
+        <?php
+        endif;
+        ?>
+
+
+
     </div>
     <div class="reviews_pagination">
         <a href="#"><div class="rev-left"><img src="<?php echo get_template_directory_uri(); ?>/img/rev-left.png" alt=""></div></a>
@@ -532,7 +538,8 @@
                 Так же Вы можете оставить заявку для консультации.
                 Мы вам перезвоним!
             </p>
-            <form class="form_application" action="">
+            <form class="form_application" action="<?php echo esc_url( admin_url('admin-post.php') ); ?>" method="post">
+                <input type="hidden" name="action" value="zayavka_form">
 
                 <input class="input" name="name" type="text" placeholder="Ваше имя">
                 <input class="input" name="number_tel" type="text" placeholder="Номер телефона">
@@ -580,7 +587,8 @@
                 Отправьте свой отзыв об оказанных вам услугах!
                 Так же вы можете оставить рекомендации и пожелания для повышения качества наших услуг.
             </p>
-            <form class="form_application" action="">
+            <form class="form_application" action="<?php echo esc_url( admin_url('admin-post.php') ); ?>" method="post">
+                <input type="hidden" name="action" value="review_form">
                 <input class="input" name="name" type="text" placeholder="Ваше имя">
                 <input class="input" name="number_tel" type="text" placeholder="Номер телефона">
                 <p class="textarea-p">Ваш отзыв</p>
@@ -603,117 +611,18 @@
     </div>
 </div>
 
-
-<!--модальные окна-->
-<div class="modal modal_application animated fadeIn" id="application" style="display: none">
-    <div class="modal_left">
-        <div class="close">
-            <img src="<?php echo get_template_directory_uri(); ?>/img/close.jpg" alt="Закрыть">
-        </div>
-        <div class="modal_content">
-            <div class="logo logo_modal">MASTER GADGET</div>
-            <h2>
-                Мы экономим ваше время и средства.
-                Всегда на связи!
-            </h2>
-            <div class="contacts_social social_modal">
-                <a href="https://www.instagram.com/mastergadget.service/">Instagram</a>
-                <a href="https://vk.com/mg.service">Vk</a>
-                <a href="https://t.me/mgadgetyalta">Telegram</a>
-                <a href="https://wa.me/79780428262">WhatsApp</a>
-                <a href="#">Viber</a>
-            </div>
-        </div>
-    </div>
-    <div class="modal_form">
-        <div class="shadow shadow_modal">
-            <div class="article_head_mob">
-                <a href="#" class="flex-img">
-                    <img src="<?php echo get_template_directory_uri(); ?>/img/arrow-back.png" alt="back">
-                </a>
-                <div class="logo logo_menu_mob logo_modal_mob" >MASTER GADGET</div>
-            </div>
-        </div>
-        <div class="modal_form_content">
-
-            <h3>
-                Расскажите нам о проблеме!
-            </h3>
-            <p>
-                Мы предоставляем услугу <span class="red_span">бесплатного</span> вызова курьера.
-                Так же Вы можете оставить заявку для консультации.
-                Мы вам перезвоним!
-            </p>
-            <form class="form_application" action="">
-
-                <input class="input" name="name" type="text" placeholder="Ваше имя">
-                <input class="input" name="number_tel" type="text" placeholder="Номер телефона">
-                <p class="textarea-p">Что случилось?</p>
-                <textarea name="application" cols="1" rows="4"></textarea>
-                <input class="form_submit" value="Отправить" type="submit" />
-            </form>
-        </div>
-    </div>
-</div>
-<div class="modal animated fadeIn" id="reviews" style="display: none">
-    <div class="modal_left">
-        <div class="close">
-            <img src="<?php echo get_template_directory_uri(); ?>/img/close.jpg" alt="Закрыть">
-        </div>
-        <div class="modal_content">
-            <div class="logo logo_modal">MASTER GADGET</div>
-            <h2>
-                Мы стараемся повышать качество наших услуг
-            </h2>
-            <div class="contacts_social social_modal">
-                <a href="https://www.instagram.com/mastergadget.service/">Instagram</a>
-                <a href="https://vk.com/mg.service">Vk</a>
-                <a href="https://t.me/mgadgetyalta">Telegram</a>
-                <a href="https://wa.me/79780428262">WhatsApp</a>
-                <a href="#">Viber</a>
-            </div>
-        </div>
-    </div>
-    <div class="modal_form">
-        <div class="shadow shadow_modal">
-            <div class="article_head_mob">
-                <div class="flex-img">
-                    <img src="<?php echo get_template_directory_uri(); ?>/img/arrow-back.png" alt="back">
-                </div>
-                <div class="logo logo_menu_mob logo_modal_mob" >MASTER GADGET</div>
-            </div>
-        </div>
-        <div class="modal_form_content">
-
-            <h3>
-                Нам важен ваш отзыв!
-            </h3>
-            <p>
-                Отправьте свой отзыв об оказанных вам услугах!
-                Так же вы можете оставить рекомендации и пожелания для повышения качества наших услуг.
-            </p>
-            <form class="form_application" action="">
-                <input class="input" name="name" type="text" placeholder="Ваше имя">
-                <input class="input" name="number_tel" type="text" placeholder="Номер телефона">
-                <p class="textarea-p">Ваш отзыв</p>
-                <textarea name="application" cols="1" rows="4"></textarea>
-                <input class="form_submit"  value="Отправить" type="submit" />
-            </form>
-        </div>
-    </div>
-</div>
-<div class="modal animated fadeIn" id="thank_application" style="display: none">
-    <div class="modal_body">
-        <h3>Благодарим за заявку!</h3>
-        <p>
-            В течение 24 часов наш менеджер перезвонит для решения вашего вопроса!
-        </p>
-        <p>
-            <span class="red_span">Оставайтесь на связи!</span>
-        </p>
-        <a href="#"><h3>Ok</h3></a>
-    </div>
-</div>
+<?php
+if (isset($_SESSION['review_success_message'] )) {
+    ?>
+    <script>
+        $(document).ready(function () {
+            setTimeout(function () {
+                showModal($('#thank_application'));
+            }, 500);
+        });
+    </script>
+    <?php unset($_SESSION['review_success_message']); ?>
+<?php } ?>
 
 </body>
 

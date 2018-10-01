@@ -86,3 +86,12 @@ if ( !defined('ABSPATH') )
 
 /** Инициализирует переменные WordPress и подключает файлы. */
 require_once(ABSPATH . 'wp-settings.php');
+
+define( 'SMTP_HOST', 'smtp.gmail.com' );
+define( 'SMTP_AUTH', true );
+define( 'SMTP_PORT', '587' );
+define( 'SMTP_SECURE', 'tls' ); //ssl
+define( 'SMTP_USERNAME', 'infocom@gmail.com' );  // Username for SMTP authentication
+define( 'SMTP_PASSWORD', 'jr58*Je51I)*jfKK' );          // Password for SMTP authentication
+define( 'SMTP_FROM',     'user@example.com' );  // SMTP From address
+define( 'SMTP_FROMNAME', 'Kelly Koe' );
