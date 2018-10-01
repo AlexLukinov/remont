@@ -21,6 +21,7 @@
     <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.lettering.js"></script>
     <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.textillate.js"></script>
     <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/ajax-functions.js"></script>
 
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/reset.min.css">
     <link rel='stylesheet prefetch' href='<?php echo get_template_directory_uri(); ?>/css/swiper.min.css'>
@@ -100,24 +101,16 @@
                 <div class="swiper-container main-slider loading">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
-                            <figure class="slide-bgimg" style="background-image:url(<?php echo get_template_directory_uri(); ?>/img/slider-foto1.jpg)">
-                                <img src="<?php echo get_template_directory_uri(); ?>/img/slider-foto1.jpg" class="entity-img" />
-                            </figure>
+                            <div class="slide-inner" style="background-image: url('<?= get_template_directory_uri() . "/img/slider-foto1.jpg"; ?>')"></div>
                         </div>
                         <div class="swiper-slide">
-                            <figure class="slide-bgimg" style="background-image:url(<?php echo get_template_directory_uri(); ?>/img/slider-foto2.jpg)">
-                                <img src="<?php echo get_template_directory_uri(); ?>/img/slider-foto2.jpg" class="entity-img" />
-                            </figure>
+                            <div class="slide-inner" style="background-image: url('<?= get_template_directory_uri() . "/img/slider-foto2.jpg"; ?>')"></div>
                         </div>
                         <div class="swiper-slide">
-                            <figure class="slide-bgimg" style="background-image:url(<?php echo get_template_directory_uri(); ?>/img/slider-foto3.jpg)">
-                                <img src="<?php echo get_template_directory_uri(); ?>/img/slider-foto3.jpg" class="entity-img" />
-                            </figure>
+                            <div class="slide-inner" style="background-image: url('<?= get_template_directory_uri() . "/img/slider-foto3.jpg"; ?>')"></div>
                         </div>
                         <div class="swiper-slide">
-                            <figure class="slide-bgimg" style="background-image:url(<?php echo get_template_directory_uri(); ?>/img/slider-foto4.jpg)">
-                                <img src="<?php echo get_template_directory_uri(); ?>/img/slider-foto4.jpg" class="entity-img" />
-                            </figure>
+                            <div class="slide-inner" style="background-image: url('<?= get_template_directory_uri() . "/img/slider-foto4.jpg"; ?>')"></div>
                         </div>
                     </div>
                 </div>
@@ -537,15 +530,15 @@
                 Так же Вы можете оставить заявку для консультации.
                 Мы вам перезвоним!
             </p>
-            <form class="form_application" action="<?php echo esc_url( admin_url('admin-post.php') ); ?>" method="post">
-                <input type="hidden" name="action" value="zayavka_form">
+<!--            <form class="form_application" action="--><?php //echo esc_url( admin_url('admin-post.php') ); ?><!--" method="post">-->
+<!--                <input type="hidden" name="action" value="zayavka_form">-->
 
-                <input class="input" name="name" type="text" placeholder="Ваше имя">
-                <input class="input" name="number_tel" type="text" placeholder="Номер телефона">
+                <input id="zayavka_name" class="input" name="name" type="text" placeholder="Ваше имя">
+                <input id="zayavka_tel" class="input" name="number_tel" type="text" placeholder="Номер телефона">
                 <p class="textarea-p">Что случилось?</p>
-                <textarea name="application" cols="1" rows="4"></textarea>
-                <input class="form_submit" value="Отправить" type="submit" />
-            </form>
+                <textarea id="zayavka_text" name="application" cols="1" rows="4"></textarea>
+                <button class="form_submit" id="zayavka-submit" value="Отправить">Отправить</button>
+<!--            </form>-->
         </div>
     </div>
 </div>
@@ -586,42 +579,29 @@
                 Отправьте свой отзыв об оказанных вам услугах!
                 Так же вы можете оставить рекомендации и пожелания для повышения качества наших услуг.
             </p>
-            <form class="form_application" action="<?php echo esc_url( admin_url('admin-post.php') ); ?>" method="post">
-                <input type="hidden" name="action" value="review_form">
-                <input class="input" name="name" type="text" placeholder="Ваше имя">
-                <input class="input" name="number_tel" type="text" placeholder="Номер телефона">
+<!--            <form class="form_application" action="--><?php //echo esc_url( admin_url('admin-post.php') ); ?><!--" method="post">-->
+<!--                <input type="hidden" name="action" value="review_form">-->
+                <input id="review_name" class="input" name="name" type="text" placeholder="Ваше имя">
+                <input id="review_tel" class="input" name="number_tel" type="text" placeholder="Номер телефона">
                 <p class="textarea-p">Ваш отзыв</p>
-                <textarea name="application" cols="1" rows="4"></textarea>
-                <input class="form_submit"  value="Отправить" type="submit" />
-            </form>
+                <textarea id="review_text" name="application" cols="1" rows="4"></textarea>
+                <button class="form_submit" id="review-submit" value="Отправить">Отправить</button>
+<!--            </form>-->
         </div>
     </div>
 </div>
 <div class="modal animated fadeIn" id="thank_application" style="display: none">
     <div class="modal_body">
         <h3>Благодарим за заявку!</h3>
-        <p>
+        <p id="ajax-text-response">
             В течение 24 часов наш менеджер перезвонит для решения вашего вопроса!
         </p>
         <p>
             <span class="red_span">Оставайтесь на связи!</span>
         </p>
-        <a href="#"><h3>Ok</h3></a>
+        <a href="#" id="ok-modal"><h3>Ok</h3></a>
     </div>
 </div>
-
-<?php
-if (isset($_SESSION['review_success_message'] )) {
-    ?>
-    <script>
-        $(document).ready(function () {
-            setTimeout(function () {
-                showModal($('#thank_application'));
-            }, 500);
-        });
-    </script>
-    <?php unset($_SESSION['review_success_message']); ?>
-<?php } ?>
 
 </body>
 

@@ -148,15 +148,8 @@ $(document).ready(function() { // вся мaгия пoсле зaгрузки с�
 
     var swiper = new Swiper(".swiper-container", swiperOptions);
 
-    //!!!!!!!!!!!!!!AJAX TEST!!!!!!!!!!!!!!!!!//
-    var data = {
-        action: 'my_action',
-        whatever: 1234
-    };
-
-    // 'ajaxurl' не определена во фронте, поэтому мы добавили её аналог с помощью wp_localize_script()
-    jQuery.post( myajax.url, data, function(response) {
-        alert('Получено с сервера: ' + response);
+    $('#ok-modal').click(function () {
+        $('#thank_application').css('display', 'none');
     });
-    //!!!!!!!!!!!!!!END AJAX TEST!!!!!!!!!!!!!!!!!//
+
 });

@@ -124,8 +124,6 @@ function remont_scripts() {
 
 	wp_enqueue_script( 'remont-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
-    wp_enqueue_script( 'ajax-functions', get_template_directory_uri() . '/js/ajax-functions.js', array(), '20151215', true );
-
 	wp_enqueue_script( 'remont-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -161,45 +159,7 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
-function review_form_handler() {
-    $post_id = wp_insert_post(array (
-        'post_type' => 'review',
-        'post_title' => $_POST['name'],
-        'post_status' => 'draft',
-    ));
-
-    if ($post_id) {
-        // insert post meta
-        add_post_meta($post_id, 'review_text', $_POST['application']);
-        add_post_meta($post_id, 'review_phone', $_POST['number_tel']);
-
-        $_SESSION['review_success_message'] = '1';
-        wp_redirect( home_url() );
-        exit;
-    }
-}
-add_action( 'admin_post_nopriv_review_form', 'review_form_handler' );
-add_action( 'admin_post_review_form', 'review_form_handler' );
-
 function zayavka_form_handler() {
-    $post_id = wp_insert_post(array (
-        'post_type' => 'zayavka',
-        'post_title' => $_POST['name'],
-        'post_status' => 'draft',
-    ));
-
-    if ($post_id) {
-        // insert post meta
-        add_post_meta($post_id, 'zayavka_text', $_POST['application']);
-        add_post_meta($post_id, 'zayavka_phone', $_POST['number_tel']);
-
-        $_SESSION['zayavka_success_message'] = '1';
-        wp_redirect( home_url() );
-        exit;
-    }
-
-    //отправка почты здесь
-    wp_mail("einstein701@gmail.com", "Subject", "Message");
 }
 add_action( 'admin_post_nopriv_zayavka_form', 'zayavka_form_handler' );
 add_action( 'admin_post_zayavka_form', 'zayavka_form_handler' );
@@ -217,26 +177,49 @@ function send_smtp_email( $phpmailer ) {
     $phpmailer->FromName   = SMTP_FROMNAME;
 }
 
-add_action( 'wp_enqueue_scripts', 'myajax_data', 99 );
-function myajax_data(){
+function review_callback() {
+    $post_id = wp_insert_post(array (
+        'post_type' => 'review',
+        'post_title' => $_POST['name'],
+        'post_status' => 'draft',
+    ));
 
-    wp_localize_script( 'ajax-functions', 'myajax',
-        array(
-            'url' => admin_url('admin-ajax.php')
-        )
-    );
+    if ($post_id) {
+        // insert post meta
+        add_post_meta($post_id, 'review_text', $_POST['application']);
+        add_post_meta($post_id, 'review_phone', $_POST['number_tel']);
 
-}
-
-function my_action_callback() {
-    $whatever = intval( $_POST['whatever'] );
-
-    echo $whatever + 10;
-
-    // выход нужен для того, чтобы в ответе не было ничего лишнего, только то что возвращает функция
+        echo 'Все хорошо';
+    } else {
+        echo 'Что-то пошло не так';
+    }
     wp_die();
 }
 
-add_action('wp_ajax_(action)', 'my_action_callback');
-add_action('wp_ajax_nopriv_(action)', 'my_action_callback');
+add_action('wp_ajax_review_callback', 'review_callback');
+add_action('wp_ajax_nopriv_review_callback', 'review_callback');
 
+function zayavka_callback() {
+    $post_id = wp_insert_post(array (
+        'post_type' => 'zayavka',
+        'post_title' => $_POST['name'],
+        'post_status' => 'draft',
+    ));
+
+    if ($post_id) {
+        // insert post meta
+        add_post_meta($post_id, 'zayavka_text', $_POST['application']);
+        add_post_meta($post_id, 'zayavka_phone', $_POST['number_tel']);
+
+        echo 'Все хорошо';
+    } else {
+        echo 'Что-то пошло не так';
+    }
+
+    //отправка почты здесь
+    wp_mail("einstein701@gmail.com", "Subject", "Message");
+    wp_die();
+}
+
+add_action('wp_ajax_zayavka_callback', 'zayavka_callback');
+add_action('wp_ajax_nopriv_zayavka_callback', 'zayavka_callback');
