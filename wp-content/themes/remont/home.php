@@ -15,12 +15,10 @@
             integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl"
             crossorigin="anonymous">
     </script>
-    <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/viewportchecker.js"></script>
+    <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/viewportchecker.min.js"></script>
     <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/anime.min.js"></script>
     <script type="text/javascript" src='<?php echo get_template_directory_uri(); ?>/js/swiper.min.js'></script>
     <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/index.js"></script>
-    <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.lettering.js"></script>
-    <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.textillate.js"></script>
     <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery-ui.min.js"></script>
     <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/ajax-functions.js"></script>
 
@@ -39,7 +37,7 @@
     <div class="menu">
         <div class="hamburgerIcon"></div>
     </div>
-    <div id="menu" class="animated fadeIn" style="display: none">
+    <div id="menu" style="display: none">
         <div class="menu_wrapper">
             <div class="logo logo_menu_mob">MASTER GADGET</div>
             <nav>

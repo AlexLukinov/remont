@@ -151,11 +151,11 @@ $(document).ready(function() { // вся мaгия пoсле зaгрузки с�
     $('#ok-modal').click(function () {
         $('#thank_application').css('display', 'none');
     });
-
-});
-jQuery(document).ready(function() {
-    jQuery('.section_services').addClass("hidden").viewportChecker({
+    $('.section_services').addClass("hidden").viewportChecker({
         classToAdd: 'visible animated fadeIn',
         offset: 100
     });
+    $('.menu').click(function () {
+        $("#menu").show('slide', 1000);
+    })
 });
