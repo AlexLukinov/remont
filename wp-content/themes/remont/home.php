@@ -15,19 +15,15 @@
             integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl"
             crossorigin="anonymous">
     </script>
-
-    <script type="text/javascript" src='<?php echo get_template_directory_uri(); ?>/js/swiper.min.js'></script>
     <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/anime.min.js"></script>
-    <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/path-slider.min.js"></script>
+    <script type="text/javascript" src='<?php echo get_template_directory_uri(); ?>/js/swiper.min.js'></script>
     <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/index.js"></script>
-    <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.lettering.js"></script>
-    <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.textillate.js"></script>
-
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/reset.min.css">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/animate.css">
+<!--    <link rel="stylesheet" href="--><?php //echo get_template_directory_uri(); ?><!--/css/reset.min.css">-->
     <link rel='stylesheet prefetch' href='<?php echo get_template_directory_uri(); ?>/css/swiper.min.css'>
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/style.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/font-awesome.min.css">
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/animate.css">
+
     <title>Ремонт компьютерной техники</title>
 </head>
 <body>
@@ -66,12 +62,12 @@
             </div>
             <div class="menu_social">
                 <div class="contacts_social">
-                    <a href="#">Vk</a>
-                    <a href="#">Instagram</a>
+                    <a href="https://vk.com/mg.service">Vk</a>
+                    <a href="https://www.instagram.com/mastergadget.service/">Instagram</a>
                 </div>
                 <div class="contacts_social margin_group">
-                    <a href="#">Telegram</a>
-                    <a href="#">WhatsApp</a>
+                    <a href="https://t.me/mgadgetyalta">Telegram</a>
+                    <a href="https://wa.me/79780428262">WhatsApp</a>
                     <a href="#">Viber</a>
                 </div>
                 <div class="year">2018</div>
@@ -90,9 +86,9 @@
 <section class="section_home">
     <div class="bg"></div>
     <div class="social">
-        <a href="#">Instagram</a>
-        <a href="#">WhatsApp</a>
-        <a href="#">Telegram</a>
+        <a href="https://www.instagram.com/mastergadget.service/">Instagram</a>
+        <a href="https://t.me/mgadgetyalta">Telegram</a>
+        <a href="https://wa.me/79780428262">WhatsApp</a>
     </div>
     <div class="home">
         <div class="home_slider">
@@ -170,8 +166,7 @@
         </div>
     </a>
 </section>
-<section class="section_services">
-    <a name="#uslugi"></a>
+<section class="section_services" id="uslugi">
     <div class="services">
         <div class="services_content">
             <div class="services_anchor">Наши услуги</div>
@@ -256,7 +251,7 @@
             ВСЕГДА делаем все возможное чтобы ВСЕ Ваши данные остались в целости и сохранности</div>
     </div>
 </section>
-<section class="plast">
+<section class="plast" id="about-us">
     <div class="plast_img">
         <div class="img_deco"></div>
         <div class="bg"></div>
@@ -373,7 +368,7 @@
     </div>
     <a href="#" id="rev-a"><div class="btn">Оставить отзыв</div></a>
 </section>
-<section class="card_section">
+<section class="card_section" id="contacts">
     <div class="card_caption_bg">
         <div class="card_caption">
             <h3 class="card_caption_h3">Лучшие на Южном Берегу</h3>
@@ -390,10 +385,10 @@
         </div>
     </div>
     <div class="contacts_social_mobile">
-        <a href="#">Instagram</a>
-        <a href="#">Vk</a>
-        <a href="#">Telegram</a>
-        <a href="#">WhatsApp</a>
+        <a href="https://www.instagram.com/mastergadget.service/">Instagram</a>
+        <a href="https://vk.com/mg.service">Vk</a>
+        <a href="https://t.me/mgadgetyalta">Telegram</a>
+        <a href="https://wa.me/79780428262">WhatsApp</a>
         <a href="#">Viber</a>
     </div>
     <div class="contacts">
@@ -417,15 +412,15 @@
     <div class="block_card">
         <div class="card"></div>
         <div class="contacts_social">
-            <a href="#">Instagram</a>
-            <a href="#">Vk</a>
-            <a href="#">Telegram</a>
-            <a href="#">WhatsApp</a>
+            <a href="https://www.instagram.com/mastergadget.service/">Instagram</a>
+            <a href="https://vk.com/mg.service">Vk</a>
+            <a href="https://t.me/mgadgetyalta">Telegram</a>
+            <a href="https://wa.me/79780428262">WhatsApp</a>
             <a href="#">Viber</a>
         </div>
     </div>
 </section>
-<section class="blog_section">
+<section class="blog_section" id="blog">
     <div class="blog_caption">
         <h2>Блог и другие<br> полезные статьи</h2>
     </div>
@@ -452,13 +447,16 @@
                 ?>
 
                 <div class="blog_card">
-                    <a href="<?= get_post_permalink(); ?>">
-                        <?php the_post_thumbnail(); ?></a>
-<!--                    <img src="--><?php //echo get_template_directory_uri(); ?><!--/img/1.jpg" alt="">-->
-                    <div class="blog_card_title"><?= get_the_title(); ?></div>
-                    <div class="blog_card_text">
-                        <?php the_excerpt(); ?>
+                    <div class="blog_card_body">
+                        <a href="<?= get_post_permalink(); ?>">
+                            <?php the_post_thumbnail(); ?></a>
+                        <!--                    <img src="--><?php //echo get_template_directory_uri(); ?><!--/img/1.jpg" alt="">-->
+                        <div class="blog_card_title"><?= get_the_title(); ?></div>
+                        <div class="blog_card_text">
+                            <?php the_excerpt(); ?>
+                        </div>
                     </div>
+
                     <div class="blog_card_footer">
                         <div class="blog_card_date"><?= get_the_date(); ?></div>
                         <a href="<?= get_post_permalink(); ?>" class="btn_read"><span><img src="<?php echo get_template_directory_uri(); ?>/img/arrow-read.png" alt=""></span></a>
@@ -506,10 +504,10 @@
                 Всегда на связи!
             </h2>
             <div class="contacts_social social_modal">
-                <a href="#">Instagram</a>
-                <a href="#">Vk</a>
-                <a href="#">Telegram</a>
-                <a href="#">WhatsApp</a>
+                <a href="https://www.instagram.com/mastergadget.service/">Instagram</a>
+                <a href="https://vk.com/mg.service">Vk</a>
+                <a href="https://t.me/mgadgetyalta">Telegram</a>
+                <a href="https://wa.me/79780428262">WhatsApp</a>
                 <a href="#">Viber</a>
             </div>
         </div>
@@ -555,10 +553,10 @@
                 Мы стараемся повышать качество наших услуг
             </h2>
             <div class="contacts_social social_modal">
-                <a href="#">Instagram</a>
-                <a href="#">Vk</a>
-                <a href="#">Telegram</a>
-                <a href="#">WhatsApp</a>
+                <a href="https://www.instagram.com/mastergadget.service/">Instagram</a>
+                <a href="https://vk.com/mg.service">Vk</a>
+                <a href="https://t.me/mgadgetyalta">Telegram</a>
+                <a href="https://wa.me/79780428262">WhatsApp</a>
                 <a href="#">Viber</a>
             </div>
         </div>

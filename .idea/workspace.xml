@@ -2,18 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e7d506b2-6be0-436d-887f-c8a44d582048" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/remont/css/reset.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/wp-content/themes/remont/css/swiper.min.css" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wp-content/themes/remont/img/logo.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wp-content/themes/remont/js/customizer.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wp-content/themes/remont/js/navigation.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/wp-content/themes/remont/js/skip-link-focus-fix.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wp-content/themes/remont/css/jquery.fullpage.min.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wp-content/themes/remont/js/jquery.fullpage.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wp-content/themes/remont/js/jquery.lettering.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wp-content/themes/remont/js/jquery.textillate.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/wp-content/themes/remont/js/path-slider.min.js" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/remont/css/font-awesome.min.css" afterPath="$PROJECT_DIR$/wp-content/themes/remont/css/font-awesome.min.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/remont/css/style.css" afterPath="$PROJECT_DIR$/wp-content/themes/remont/css/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/remont/home.php" afterPath="$PROJECT_DIR$/wp-content/themes/remont/home.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/remont/js/index.js" afterPath="$PROJECT_DIR$/wp-content/themes/remont/js/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wp-content/themes/remont/js/jquery.min.js" afterPath="$PROJECT_DIR$/wp-content/themes/remont/js/jquery.min.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -37,16 +33,16 @@
       <file leaf-file-name="home.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/wp-content/themes/remont/home.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4287">
-              <caret line="140" column="73" lean-forward="true" selection-start-line="140" selection-start-column="73" selection-end-line="140" selection-end-column="73" />
+            <state relative-caret-position="756">
+              <caret line="21" column="5" lean-forward="false" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="109" />
               <folding>
-                <element signature="e#4546#4640#0#HTML" expanded="true" />
-                <element signature="e#4948#5042#0#HTML" expanded="true" />
-                <element signature="e#5350#5444#0#HTML" expanded="true" />
-                <element signature="e#5752#5846#0#HTML" expanded="true" />
-                <element signature="e#6485#6506#0#HTML" expanded="true" />
-                <element signature="e#6795#6816#0#HTML" expanded="true" />
-                <element signature="e#7110#7131#0#HTML" expanded="true" />
+                <element signature="e#4419#4513#0#HTML" expanded="true" />
+                <element signature="e#4821#4915#0#HTML" expanded="true" />
+                <element signature="e#5223#5317#0#HTML" expanded="true" />
+                <element signature="e#5625#5719#0#HTML" expanded="true" />
+                <element signature="e#6358#6379#0#HTML" expanded="true" />
+                <element signature="e#6668#6689#0#HTML" expanded="true" />
+                <element signature="e#6983#7004#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -76,7 +72,7 @@
         <entry file="file://$PROJECT_DIR$/wp-content/themes/remont/js/index.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="36">
-              <caret line="91" column="31" lean-forward="true" selection-start-line="91" selection-start-column="31" selection-end-line="91" selection-end-column="31" />
+              <caret line="91" column="31" lean-forward="false" selection-start-line="91" selection-start-column="31" selection-end-line="91" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -85,18 +81,8 @@
       <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/wp-content/themes/remont/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="411">
-              <caret line="318" column="27" lean-forward="true" selection-start-line="318" selection-start-column="27" selection-end-line="318" selection-end-column="27" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="reset.min.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/wp-content/themes/remont/css/reset.min.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="334">
+              <caret line="1886" column="7" lean-forward="false" selection-start-line="1884" selection-start-column="6" selection-end-line="1886" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -125,8 +111,10 @@
         <option value="$PROJECT_DIR$/wp-content/themes/remont/footer.php" />
         <option value="$PROJECT_DIR$/wp-content/themes/remont/single.php" />
         <option value="$PROJECT_DIR$/wp-content/themes/remont/template-parts/content.php" />
-        <option value="$PROJECT_DIR$/wp-content/themes/remont/home.php" />
         <option value="$PROJECT_DIR$/wp-content/themes/remont/js/index.js" />
+        <option value="$USER_HOME$/Downloads/split-screen-slideshow/index.html" />
+        <option value="$USER_HOME$/Downloads/split-screen-slideshow/css/style.css" />
+        <option value="$PROJECT_DIR$/wp-content/themes/remont/home.php" />
         <option value="$PROJECT_DIR$/wp-content/themes/remont/css/style.css" />
       </list>
     </option>
@@ -254,12 +242,12 @@
       <updated>1537609348083</updated>
       <workItem from="1537609349273" duration="2979000" />
       <workItem from="1537979682176" duration="11151000" />
-      <workItem from="1538314684436" duration="3081000" />
+      <workItem from="1538314684436" duration="12651000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17211000" />
+    <option name="totallyTimeSpent" value="26781000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
@@ -272,7 +260,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298077" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -340,13 +328,13 @@
         <state relative-caret-position="24804">
           <caret line="689" column="6" lean-forward="false" selection-start-line="689" selection-start-column="6" selection-end-line="689" selection-end-column="6" />
           <folding>
-            <element signature="e#4546#4640#0#HTML" expanded="true" />
-            <element signature="e#4948#5042#0#HTML" expanded="true" />
-            <element signature="e#5350#5444#0#HTML" expanded="true" />
-            <element signature="e#5752#5846#0#HTML" expanded="true" />
-            <element signature="e#6485#6506#0#HTML" expanded="true" />
-            <element signature="e#6795#6816#0#HTML" expanded="true" />
-            <element signature="e#7110#7131#0#HTML" expanded="true" />
+            <element signature="e#4419#4513#0#HTML" expanded="true" />
+            <element signature="e#4821#4915#0#HTML" expanded="true" />
+            <element signature="e#5223#5317#0#HTML" expanded="true" />
+            <element signature="e#5625#5719#0#HTML" expanded="true" />
+            <element signature="e#6358#6379#0#HTML" expanded="true" />
+            <element signature="e#6668#6689#0#HTML" expanded="true" />
+            <element signature="e#6983#7004#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -363,13 +351,13 @@
         <state relative-caret-position="36">
           <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding>
-            <element signature="e#4546#4640#0#HTML" expanded="true" />
-            <element signature="e#4948#5042#0#HTML" expanded="true" />
-            <element signature="e#5350#5444#0#HTML" expanded="true" />
-            <element signature="e#5752#5846#0#HTML" expanded="true" />
-            <element signature="e#6485#6506#0#HTML" expanded="true" />
-            <element signature="e#6795#6816#0#HTML" expanded="true" />
-            <element signature="e#7110#7131#0#HTML" expanded="true" />
+            <element signature="e#4419#4513#0#HTML" expanded="true" />
+            <element signature="e#4821#4915#0#HTML" expanded="true" />
+            <element signature="e#5223#5317#0#HTML" expanded="true" />
+            <element signature="e#5625#5719#0#HTML" expanded="true" />
+            <element signature="e#6358#6379#0#HTML" expanded="true" />
+            <element signature="e#6668#6689#0#HTML" expanded="true" />
+            <element signature="e#6983#7004#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -398,22 +386,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/wp-content/themes/remont/home.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4287">
-          <caret line="140" column="73" lean-forward="true" selection-start-line="140" selection-start-column="73" selection-end-line="140" selection-end-column="73" />
-          <folding>
-            <element signature="e#4546#4640#0#HTML" expanded="true" />
-            <element signature="e#4948#5042#0#HTML" expanded="true" />
-            <element signature="e#5350#5444#0#HTML" expanded="true" />
-            <element signature="e#5752#5846#0#HTML" expanded="true" />
-            <element signature="e#6485#6506#0#HTML" expanded="true" />
-            <element signature="e#6795#6816#0#HTML" expanded="true" />
-            <element signature="e#7110#7131#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/wp-content/themes/remont/css/reset.min.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -425,23 +397,63 @@
     <entry file="file://$PROJECT_DIR$/wp-content/themes/remont/js/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="36">
-          <caret line="91" column="31" lean-forward="true" selection-start-line="91" selection-start-column="31" selection-end-line="91" selection-end-column="31" />
+          <caret line="91" column="31" lean-forward="false" selection-start-line="91" selection-start-column="31" selection-end-line="91" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/remont/css/swiper.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3456">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/wp-content/themes/remont/js/swiper.min.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-37186">
+        <state relative-caret-position="-2808">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$USER_HOME$/Downloads/split-screen-slideshow/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="83" column="29" lean-forward="true" selection-start-line="83" selection-start-column="29" selection-end-line="83" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/split-screen-slideshow/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="792">
+          <caret line="34" column="64" lean-forward="false" selection-start-line="34" selection-start-column="64" selection-end-line="34" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wp-content/themes/remont/home.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="756">
+          <caret line="21" column="5" lean-forward="false" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="109" />
+          <folding>
+            <element signature="e#4419#4513#0#HTML" expanded="true" />
+            <element signature="e#4821#4915#0#HTML" expanded="true" />
+            <element signature="e#5223#5317#0#HTML" expanded="true" />
+            <element signature="e#5625#5719#0#HTML" expanded="true" />
+            <element signature="e#6358#6379#0#HTML" expanded="true" />
+            <element signature="e#6668#6689#0#HTML" expanded="true" />
+            <element signature="e#6983#7004#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/wp-content/themes/remont/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="411">
-          <caret line="318" column="27" lean-forward="true" selection-start-line="318" selection-start-column="27" selection-end-line="318" selection-end-column="27" />
+        <state relative-caret-position="334">
+          <caret line="1886" column="7" lean-forward="false" selection-start-line="1884" selection-start-column="6" selection-end-line="1886" selection-end-column="7" />
           <folding />
         </state>
       </provider>
