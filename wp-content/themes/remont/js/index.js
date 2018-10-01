@@ -117,7 +117,9 @@ $(document).ready(function() { // вся мaгия пoсле зaгрузки с�
         on: {
             slideChange: function() {
                 var swiper = this;
-                console.log(swiper.activeIndex);
+                var activeIndex = (swiper.activeIndex - 1) % (swiper.slides.length - 2);
+                var index = (activeIndex < 0) ? 3 : activeIndex;
+                handleContent(index);
             },
             progress: function() {
                 var swiper = this;
@@ -151,6 +153,41 @@ $(document).ready(function() { // вся мaгия пoсле зaгрузки с�
     $('#ok-modal').click(function () {
         $('#thank_application').css('display', 'none');
     });
+
+    function handleContent(index) {
+        switch (index) {
+            case 0:
+                $('#home_slider_content1').css('display', 'flex');
+                $('#home_slider_content2').css('display', 'none');
+                $('#home_slider_content3').css('display', 'none');
+                $('#home_slider_content4').css('display', 'none');
+                break;
+            case 1:
+                $('#home_slider_content1').css('display', 'none');
+                $('#home_slider_content2').css('display', 'flex');
+                $('#home_slider_content3').css('display', 'none');
+                $('#home_slider_content4').css('display', 'none');
+                break;
+            case 2:
+                $('#home_slider_content1').css('display', 'none');
+                $('#home_slider_content2').css('display', 'none');
+                $('#home_slider_content3').css('display', 'flex');
+                $('#home_slider_content4').css('display', 'none');
+                break;
+            case 3:
+                $('#home_slider_content1').css('display', 'none');
+                $('#home_slider_content2').css('display', 'none');
+                $('#home_slider_content3').css('display', 'none');
+                $('#home_slider_content4').css('display', 'flex');
+                break;
+            default:
+                $('#home_slider_content1').css('display', 'flex');
+                $('#home_slider_content2').css('display', 'none');
+                $('#home_slider_content3').css('display', 'none');
+                $('#home_slider_content4').css('display', 'none');
+                break;
+        }
+    }
 
 });
 jQuery(document).ready(function() {
