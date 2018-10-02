@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="keywords" content="ремонт компьютеров, компьютерная техника">
+
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <title>Ремонт компьютерной техники</title>
+</head>
+<body>
+<div style="height: auto;">
+    <div style="opacity: 0;">
+        <h2>33333333</h2>
+    </div>
+    <div style="position: absolute; top: 0; left: 0;" id="h21">
+        <h2>11111111</h2>
+    </div>
+    <!--<h3>компьютерной техники <br> и электронных устройств</h3>-->
+    <!--<a href="#anchor_table"><div class="btn btn_home_slider">Узнать больше</div></a>-->
+    <div style="display: none; position: absolute; top: 0; left: 0;" id="h22">
+        <h2>22222222</h2>
+    </div>
+    <!--<h3 style="display: none;">курьера на дом. Консультация <br> со специалистом</h3>-->
+</div>
+<button id="xxx">click</button>
+<script>
+    $(document).ready(function () {
+       $('#xxx').click(function () {
+           $('#h21').effect ("slide", { mode : "hide", direction:"left" , distance:500}, 400);
+           $('#h22').effect("slide", {mode : "show",  direction:"right" , distance:500}, 1500);
+       });
+    });
+</script>
+</body>
+</html>

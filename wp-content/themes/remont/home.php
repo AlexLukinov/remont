@@ -116,9 +116,16 @@
             </div>
 
             <div class="home_slider_content home_slider_content1" id="home_slider_content1">
-                <h2>Ремонт и настройка</h2>
+                <div id="h21">
+                    <h2>Ремонт и настройка</h2>
+                </div>
                 <h3>компьютерной техники <br> и электронных устройств</h3>
                 <a href="#anchor_table"><div class="btn btn_home_slider">Узнать больше</div></a>
+                <div style="display: none;" id="h22">
+                    <h2>Бесплатный вызов</h2>
+                </div>
+                <h3 style="display: none;">курьера на дом. Консультация <br> со специалистом</h3>
+                <a style="display: none;" href="#"><div class="btn btn_home_slider">Узнать больше</div></a>
             </div>
             <div class="home_slider_content home_slider_content2" id="home_slider_content2" style="display: none">
                 <h2>Бесплатный вызов</h2>

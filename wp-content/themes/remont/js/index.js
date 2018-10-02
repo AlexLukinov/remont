@@ -164,10 +164,17 @@ $(document).ready(function() { // вся мaгия пoсле зaгрузки с�
                 $('#home_slider_content4').css('display', 'none');
                 break;
             case 1:
-                $('#home_slider_content1').css('display', 'none');
-                $('#home_slider_content2').css('display', 'flex');
                 $('#home_slider_content3').css('display', 'none');
                 $('#home_slider_content4').css('display', 'none');
+                $('#home_slider_content2').css('display', 'none');
+                // $('#home_slider_content1 h2').hide("slide", {}, "slow");
+                $('#h21').hide('slide', {direction: 'left'}, 1400);
+                setTimeout(function () {
+                    // $('#home_slider_content1').css('display', 'none');
+                    // $('#home_slider_content2').css('display', 'flex');
+                    // $('#home_slider_content2 h2').show('slide', { direction: "left" }, 1000);
+                    $('#h22').show('slide', {direction: 'right'}, 1400);
+                }, 10000);
                 break;
             case 2:
                 $('#home_slider_content1').css('display', 'none');
