@@ -356,9 +356,9 @@ section.section_home {
     margin-bottom: 20px;
 }
 a .btn {
+    position: relative;
     width: 164px;
     height: 46px;
-    background-color: #ffc100;
     color: #303030;
     font-family: "Montserrat-Bold";
     font-size: 10px;
@@ -367,6 +367,42 @@ a .btn {
     align-items: center;
     align-self: center;
 
+}
+.btn_read {
+    position: relative;
+    width: 66px;
+    height: 66px;
+    background-color: #CCCCCC;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+a .btn:before, .btn_read:before {
+    position: absolute;
+    content: '';
+    width: 0%;
+    height: 100%;
+    top: 0;
+    background-color: #ffc003;
+    left: auto;
+    right: 0;
+    z-index: -1;
+    transition: all 300ms ease;
+}
+.btn_read:hover {
+    color: white;
+    box-shadow: none;
+}
+a .btn:hover:before, .btn_read:hover:before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: #ffc003;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
 }
 .slider_progress {
     width: 20%;
@@ -825,14 +861,7 @@ a .phone:hover {
     flex-direction: column;
     height: 130vh;
 }
-.btn_read {
-    width: 66px;
-    height: 66px;
-    background-color: #ffc003;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+
 .blog_block {
     margin: auto;
     align-self: center;
@@ -1328,8 +1357,8 @@ input[type="text"]::placeholder { color: #cccccc; }
 }
 /*swiper*/
 .swiper-container {
-    height: calc(100vh - 120px);
-    margin: 60px;
+    height: 100%;
+
 }
 
 .swiper-slide {
