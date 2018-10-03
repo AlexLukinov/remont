@@ -154,47 +154,37 @@ $(document).ready(function() { // вся мaгия пoсле зaгрузки с�
         $('#thank_application').css('display', 'none');
     });
 
+    $('#white-div').css('height', $('#h22').height() + 10);
+    $('#white-div').css('width', $('#h22').width() + 10);
+
 
     function handleContent(index) {
         switch (index) {
             case 0:
-                $('#home_slider_content1').css('display', 'flex');
-                $('#home_slider_content2').css('display', 'none');
-                $('#home_slider_content3').css('display', 'none');
-                $('#home_slider_content4').css('display', 'none');
+                h2Animation(2, 1)
                 break;
             case 1:
-                $('#home_slider_content3').css('display', 'none');
-                $('#home_slider_content4').css('display', 'none');
-                $('#home_slider_content2').css('display', 'none');
-                // $('#home_slider_content1 h2').hide("slide", {}, "slow");
-                $('#h21').hide('slide', {direction: 'left'}, 1400);
-                setTimeout(function () {
-                    // $('#home_slider_content1').css('display', 'none');
-                    // $('#home_slider_content2').css('display', 'flex');
-                    // $('#home_slider_content2 h2').show('slide', { direction: "left" }, 1000);
-                    $('#h22').show('slide', {direction: 'right'}, 1400);
-                }, 10000);
+                h2Animation(1, 2);
                 break;
             case 2:
-                $('#home_slider_content1').css('display', 'none');
-                $('#home_slider_content2').css('display', 'none');
-                $('#home_slider_content3').css('display', 'flex');
-                $('#home_slider_content4').css('display', 'none');
+                h2Animation(2, 3);
                 break;
             case 3:
-                $('#home_slider_content1').css('display', 'none');
-                $('#home_slider_content2').css('display', 'none');
-                $('#home_slider_content3').css('display', 'none');
-                $('#home_slider_content4').css('display', 'flex');
+                h2Animation(3, 4);
                 break;
             default:
-                $('#home_slider_content1').css('display', 'flex');
-                $('#home_slider_content2').css('display', 'none');
-                $('#home_slider_content3').css('display', 'none');
-                $('#home_slider_content4').css('display', 'none');
+                h2Animation(1, 2);
                 break;
         }
+    }
+
+    function h2Animation(from, to) {
+        $('#white-div').effect ("slide", { mode : "show", direction:"right" , distance:500}, 400);
+        setTimeout(function () {
+            $('#h2' + from).toggle();
+            $('#h2' + to).toggle();
+        }, 400);
+        $('#white-div').effect ("slide", { mode : "hide", direction:"right" , distance:500}, 400);
     }
 
 });

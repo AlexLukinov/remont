@@ -115,32 +115,31 @@
                 </div>
             </div>
 
-            <div class="home_slider_content home_slider_content1" id="home_slider_content1">
-                <div id="h21">
+            <div style="position: relative;" class="home_slider_content home_slider_content1" id="home_slider_content1">
+                <div style="opacity: 0;">
+                    <h2>просто текст</h2>
+                </div>
+                <div style="position: absolute; top: 0; left: 0;" id="h21">
                     <h2>Ремонт и настройка</h2>
                 </div>
-                <h3>компьютерной техники <br> и электронных устройств</h3>
-                <a href="#anchor_table"><div class="btn btn_home_slider">Узнать больше</div></a>
-                <div style="display: none;" id="h22">
+                <div style="display: none;position: absolute; top: 0; left: 0;" id="h22">
                     <h2>Бесплатный вызов</h2>
                 </div>
+                <div style="display: none;position: absolute; top: 0; left: 0;" id="h23">
+                    <h2>Экономия времени</h2>
+                </div>
+                <div style="display: none;position: absolute; top: 0; left: 0;" id="h24">
+                    <h2>Простое решение</h2>
+                </div>
+                <div id="white-div" style="background-color: #fff; display: none; position: absolute; top: 0; left: 0;"></div>
+                <h3>компьютерной техники <br> и электронных устройств</h3>
+                <a href="#anchor_table"><div class="btn btn_home_slider">Узнать больше</div></a>
                 <h3 style="display: none;">курьера на дом. Консультация <br> со специалистом</h3>
                 <a style="display: none;" href="#"><div class="btn btn_home_slider">Узнать больше</div></a>
-            </div>
-            <div class="home_slider_content home_slider_content2" id="home_slider_content2" style="display: none">
-                <h2>Бесплатный вызов</h2>
-                <h3>курьера на дом. Консультация <br> со специалистом</h3>
-                <a href="#"><div class="btn btn_home_slider">Узнать больше</div></a>
-            </div>
-            <div class="home_slider_content home_slider_content3" id="home_slider_content3" style="display: none">
-                <h2>Экономия времени</h2>
-                <h3>сил и нервов. Мы поработаем и <br> поволнуемся за Вас!</h3>
-                <a href="#"><div class="btn btn_home_slider">Узнать больше</div></a>
-            </div>
-            <div class="home_slider_content home_slider_content4" id="home_slider_content4" style="display: none">
-                <h2>Простое решение</h2>
-                <h3>сложных проблем. С нами <br> легко. Проверьте сами!</h3>
-                <a href="#"><div class="btn btn_home_slider">Узнать больше</div></a>
+                <h3 style="display: none;">сил и нервов. Мы поработаем и <br> поволнуемся за Вас!</h3>
+                <a style="display: none;" href="#"><div class="btn btn_home_slider">Узнать больше</div></a>
+                <h3 style="display: none;">сложных проблем. С нами <br> легко. Проверьте сами!</h3>
+                <a style="display: none;" href="#"><div class="btn btn_home_slider">Узнать больше</div></a>
             </div>
         </div>
         <div class="slider_progress">
