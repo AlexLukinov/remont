@@ -1,4 +1,5 @@
 $(document).ready(function() { // вся мaгия пoсле зaгрузки стрaницы
+    var isMobile = false;
 
     $(".menu").on('click',function() {
         $('.hamburgerIcon').first().toggleClass("open");
@@ -119,6 +120,7 @@ $(document).ready(function() { // вся мaгия пoсле зaгрузки с�
                 var swiper = this;
                 var activeIndex = (swiper.activeIndex - 1) % (swiper.slides.length - 2);
                 var index = (activeIndex < 0) ? 3 : activeIndex;
+                sliderChange(index);
                 handleContent(index);
             },
             progress: function() {
@@ -154,6 +156,90 @@ $(document).ready(function() { // вся мaгия пoсле зaгрузки с�
         $('#thank_application').css('display', 'none');
     });
 
+    // work with article slider
+    var currArticleSlide = 1;
+    const blogCards = $('#blog .blog-card');
+    const articlesCount = blogCards.length;
+
+    var slidesCount = Math.floor(articlesCount / 3);
+    var oneDevision = Math.floor(3*144 / slidesCount);
+
+    initArticlesSlider();
+    listenSwitchArticlesSlider();
+
+    function listenSwitchArticlesSlider() {
+        $('#next-article').click(function () {
+            if (currArticleSlide < articlesCount) {
+                currArticleSlide += 1;
+                articlesSlideChnage(currArticleSlide);
+            }
+        });
+
+        $('#prev-article').click(function () {
+            if (currArticleSlide > 1) {
+                currArticleSlide -= 1;
+                articlesSlideChnage(currArticleSlide);
+            }
+        });
+    }
+
+    function articlesSlideChnage(currArticleSlide) {
+        handleSliderLine($('#articles-line'), oneDevision*currArticleSlide);
+        handleBlogCardsVisibility(currArticleSlide);
+        let articlesCurrSlideText = currArticleSlide > 9 ? currArticleSlide : '0' + currArticleSlide;
+        $('#articles-curr-slide').text(articlesCurrSlideText);
+    }
+
+    function handleBlogCardsVisibility(currArticleSlide) {
+        blogCards.css('display', 'none');
+        if (isMobile) {
+            $('#blog-card' + currArticleSlide).css('display', 'block');
+        } else {
+            $('#blog-card' + currArticleSlide*3).css('display', 'block');
+            $('#blog-card' + (currArticleSlide*3 - 1)).css('display', 'block');
+            $('#blog-card' + (currArticleSlide*3 - 2)).css('display', 'block');
+        }
+    }
+
+    function initArticlesSlider() {
+        blogCards.css('display', 'none');
+
+        if (isMobile) {
+            slidesCount = articlesCount;
+            oneDevision = Math.floor(144 / slidesCount);
+        }
+
+        let articlesCountText = slidesCount > 9 ? slidesCount : '0' + slidesCount;
+        // let articlesCurrSlideText = currSlide > 9 ? currSlide : '0' + currSlide;
+        $('#articles-count').text(articlesCountText);
+
+        $('#articles-curr-slide').text('01');
+        handleSliderLine($('#articles-line'), oneDevision);
+    }
+
+    function sliderChange(index) {
+        const currSlide = index + 1;
+        let lineLength = 36;
+        switch (currSlide) {
+            case 1: lineLength = 36;
+                break;
+            case 2: lineLength = 72;
+                break;
+            case 3: lineLength = 108;
+                break;
+            case 4: lineLength = 144;
+                break;
+        }
+        handleSliderLine($('#line'), lineLength);
+        $('#curr-slide-number').text('0' + currSlide);
+    }
+
+    function handleSliderLine(line, length) {
+        if (length > 140) {
+            length = 144;
+        }
+        line.attr('d', 'M0 0, ' + length + ' 10');
+    }
 
     function handleContent(index) {
         switch (index) {

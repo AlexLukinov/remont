@@ -15,26 +15,21 @@
     <title>Ремонт компьютерной техники</title>
 </head>
 <body>
-<div style="height: auto;">
-    <div style="opacity: 0;">
-        <h2>33333333</h2>
-    </div>
-    <div style="position: absolute; top: 0; left: 0;" id="h21">
-        <h2>11111111</h2>
-    </div>
-    <!--<h3>компьютерной техники <br> и электронных устройств</h3>-->
-    <!--<a href="#anchor_table"><div class="btn btn_home_slider">Узнать больше</div></a>-->
-    <div style="display: none; position: absolute; top: 0; left: 0;" id="h22">
-        <h2>22222222</h2>
-    </div>
-    <!--<h3 style="display: none;">курьера на дом. Консультация <br> со специалистом</h3>-->
+<div class="slider_progress">
+    <a id="swiper-button-prev" href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/arrow-left.png" alt=""></a>
+    <div id="curr-slide-number" class="slider_number">01</div>
+    <svg width="144" height="1">
+        <path class="bg_svg" stroke="black" d="M0 10, 144 10"></path>
+        <path id="line" class="meter" stroke="#ffc100" d="M0 0, 36 10" style="stroke-dashoffset: 144;"></path>
+    </svg>
+    <div class="slider_number">04</div>
+    <a id="swiper-button-next" href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/arrow-right.png" alt=""></a>
 </div>
 <button id="xxx">click</button>
 <script>
     $(document).ready(function () {
        $('#xxx').click(function () {
-           $('#h21').effect ("slide", { mode : "hide", direction:"left" , distance:500}, 400);
-           $('#h22').effect("slide", {mode : "show",  direction:"right" , distance:500}, 1500);
+           sliderChange(index);
        });
     });
 </script>
