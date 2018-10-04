@@ -11,9 +11,25 @@ $(document).ready(function() { // вся мaгия пoсле зaгрузки с�
         $('#thank_application').css('display', 'none');
     });
 
+    var appleImgCoordinate = $('#apple-img').offset().top;
+    var watchImgCoordinate = $('#watch-img').offset().top;
+    var appleImgAlreadyShown = false;
+    var watchImgAlreadyShown = false;
+
     $(window).scroll(function(){
-        if ( $(window).scrollTop() >= 0 ){
+        var currCoordinate = $(window).scrollTop();
+        if (currCoordinate >= 0){
             $('#item_circle1').addClass('active');
+        }
+
+        if (currCoordinate >= (appleImgCoordinate - 200) && !appleImgAlreadyShown) {
+            $('#white-div-apple').effect("slide", { mode : "hide", direction:"right" , distance:500}, 400);
+            appleImgAlreadyShown = true;
+        }
+        
+        if (currCoordinate >= (watchImgCoordinate - 200) && !watchImgAlreadyShown) {
+            $('#white-div-watch').effect("slide", { mode : "hide", direction:"left" , distance:500}, 400);
+            watchImgAlreadyShown = true;
         }
     });
 
