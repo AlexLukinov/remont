@@ -192,11 +192,15 @@ $(document).ready(function() { // вся мaгия пoсле зaгрузки с�
 
 });
 jQuery(document).ready(function() {
-    jQuery('.section_services').addClass("hidden").viewportChecker({
-        classToAdd: 'visible animated fadeIn',
+    $('.bg').addClass("hidden").viewportChecker({
+        classToAdd: 'visible fade-bg',
         offset: 100
     });
-    // $('.plast_img').click(function () {
-    //     $(".plast_img").show('slide', 1000);
-    // })
+
+
+    $(window).scroll(function(){
+        if ( $(window).scrollTop() >= 0 ){
+            $('#item_circle1').addClass('active');
+        }
+    });
 });

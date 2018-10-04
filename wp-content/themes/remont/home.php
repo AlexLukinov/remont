@@ -148,11 +148,11 @@
         </div>
     </div>
     <div class="nav-fixed">
-        <div class="item_circle active"></div>
-        <div class="item_circle"></div>
-        <div class="item_circle"></div>
-        <div class="item_circle"></div>
-        <div class="item_circle"></div>
+        <div class="item_circle" id="item_circle1"></div>
+        <div class="item_circle" id="item_circle2"></div>
+        <div class="item_circle" id="item_circle3"></div>
+        <div class="item_circle" id="item_circle4"></div>
+        <div class="item_circle" id="item_circle5"></div>
     </div>
     <p class="phone-p_mobile">Заказать звонок</p>
     <a href="#">
@@ -375,7 +375,7 @@
                     доступные для обслуживания
                     и курьерской доставки нашим сервисным центром.
                 </p>
-                <a class="a-card" href="#">
+                <a class="a-card" href="https://yandex.ru/maps/?um=constructor%3A2e854d7a2a0dc815c9d788ccfbbf2176d3eccde7cdf3a663f30eedaec71b8f33&source=constructorLink">
                     <span class="span_btn">смотреть карту</span>
                     <img src="<?php echo get_template_directory_uri(); ?>/img/rev-right.png" alt="">
                 </a>
@@ -408,7 +408,9 @@
         </div>
     </div>
     <div class="block_card">
-        <div class="card"></div>
+        <div class="card">
+            <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A2e854d7a2a0dc815c9d788ccfbbf2176d3eccde7cdf3a663f30eedaec71b8f33&amp;source=constructor" width="100%" height="400" frameborder="0"></iframe>
+        </div>
         <div class="contacts_social">
             <a href="https://www.instagram.com/mastergadget.service/">Instagram</a>
             <a href="https://vk.com/mg.service">Vk</a>

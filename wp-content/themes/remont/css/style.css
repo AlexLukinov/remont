@@ -247,12 +247,15 @@ nav a:hover {
     color: white;
     line-height: 3;
 }
+.contacts_social a:hover{
+    color: #ffc003;
+}
 .menu_social .year {
     font-family: Montserrat-Bold;
     font-size: 12px;
 }
-.zvoni {
-    /*margin-bottom: 41%;*/
+.zvoni .menu_name:hover {
+    color: white;
 }
 header {
     height: 11vh;
@@ -366,13 +369,19 @@ a .btn {
     justify-content: center;
     align-items: center;
     align-self: center;
-
+    background-color: #ffc003;
+    z-index: 0;
+}
+a .btn:hover {
+    color: white;
+    transition: all 300ms ease;
 }
 .btn_read {
+    z-index: 0;
     position: relative;
     width: 66px;
     height: 66px;
-    background-color: #CCCCCC;
+    background-color: #ffc003;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -383,11 +392,12 @@ a .btn:before, .btn_read:before {
     width: 0%;
     height: 100%;
     top: 0;
-    background-color: #ffc003;
-    left: auto;
-    right: 0;
+    background-color: #333333;
+    right: auto;
+    left: 0;
     z-index: -1;
     transition: all 300ms ease;
+    color: white;
 }
 .btn_read:hover {
     color: white;
@@ -398,10 +408,9 @@ a .btn:hover:before, .btn_read:hover:before {
     content: '';
     width: 100%;
     height: 100%;
-    background-color: #ffc003;
-    top: 0;
-    left: 0;
-    right: 0;
+    background-color: #333333;
+    top: 0%;
+    left: 0%;
     z-index: -1;
 }
 .slider_progress {
@@ -610,6 +619,66 @@ a .phone:hover {
     left: 3%;
     z-index: -1;
 }
+.plast_img .bg::before{
+    content: "";
+    width: 0%;
+}
+.plast_img .bg::after{
+    content: "";
+    width: 26%;
+    animation: fade-bg;
+}
+.fade-bg {
+    animation-name: fade-bg;
+    -webkit-animation-name: fade-bg;
+
+    animation-duration: 3s;
+    -webkit-animation-duration: 3s;
+
+    animation-timing-function: ease-out;
+    -webkit-animation-timing-function: ease-out;
+
+    transform-origin: 0% 0%;
+    -ms-transform-origin: 0% 0%;
+    -webkit-transform-origin: 0% 0%;
+}
+
+@keyframes fade-bg {
+    0% {
+        -webkit-transform: scaleX(0.3);
+    }
+    40% {
+        -webkit-transform: scaleX(0.6);
+    }
+    60% {
+        -webkit-transform: scaleX(0.8);
+    }
+    80% {
+        -webkit-transform: scaleX(0.9);
+    }
+    100% {
+        -webkit-transform: scaleX(1);
+    }
+}
+
+@-webkit-keyframes fade-bg {
+    0% {
+        -webkit-transform: scaleX(0.3);
+    }
+    40% {
+        -webkit-transform: scaleX(0.6);
+    }
+    60% {
+        -webkit-transform: scaleX(0.8);
+    }
+    80% {
+        -webkit-transform: scaleX(0.9);
+    }
+    100% {
+        -webkit-transform: scaleX(1);
+    }
+
+}
 .img_deco {
     width: 74%;
     height: 90%;
@@ -617,6 +686,7 @@ a .phone:hover {
     background-position: center;
     background-size: cover;
     align-self: center;
+    background-repeat: no-repeat;
 }
 .plast_content {
     display: flex;
@@ -762,6 +832,7 @@ a .phone:hover {
     display: flex;
     justify-content: center;
     align-items: flex-start;
+    z-index: 1;
 }
 .card_caption {
     display: flex;
@@ -829,10 +900,13 @@ a .phone:hover {
 .card {
     width: 100%;
     height: 70%;
-    background-image: url("../img/card.jpg");
-    background-repeat: no-repeat;
-    background-size: contain;
+    /*background-image: url("../img/card.jpg");*/
+    /*background-repeat: no-repeat;*/
+    /*background-size: contain;*/
     margin-top: 80px;
+}
+.card {
+    filter: grayscale(90%);
 }
 .contacts_social {
     width: 60%;
@@ -859,7 +933,7 @@ a .phone:hover {
 }
 .blog_section {
     flex-direction: column;
-    height: 130vh;
+    height: 150vh;
 }
 
 .blog_block {
@@ -914,18 +988,17 @@ a .phone:hover {
     font-family: Montserrat-Bold;
     font-size: 15px;
     color: #333333;
-    margin-left: 8%;
+    margin-left: 34px;
 }
 a .btn-grey {
-    background-color: #333333;
-    color: white;
     margin: 40px auto;
 }
 .blog_card img {
     width: 100%;
 }
 .blog_pagination {
-    display: none;
+    margin: 30px auto;
+    width: 80%;
 }
 footer   {
     height: 10vh;
