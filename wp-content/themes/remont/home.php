@@ -116,9 +116,11 @@
             </div>
 
             <div style="position: relative;" class="home_slider_content home_slider_content1" id="home_slider_content1">
+
                 <div style="opacity: 0;">
                     <h2>просто текст</h2>
                 </div>
+
                 <div style="position: absolute; top: 0; left: 0;" id="h21">
                     <h2>Ремонт и настройка</h2>
                 </div>
@@ -132,22 +134,21 @@
                     <h2>Простое решение</h2>
                 </div>
                 <div id="white-div" style="background-color: #fff; display: none; position: absolute; top: 0; left: 0;"></div>
-                <h3>компьютерной техники <br> и электронных устройств</h3>
-                <a href="#anchor_table"><div class="btn btn_home_slider">Узнать больше</div></a>
-                <h3 style="display: none;">курьера на дом. Консультация <br> со специалистом</h3>
-                <a style="display: none;" href="#"><div class="btn btn_home_slider">Узнать больше</div></a>
-                <h3 style="display: none;">сил и нервов. Мы поработаем и <br> поволнуемся за Вас!</h3>
-                <a style="display: none;" href="#"><div class="btn btn_home_slider">Узнать больше</div></a>
-                <h3 style="display: none;">сложных проблем. С нами <br> легко. Проверьте сами!</h3>
-                <a style="display: none;" href="#"><div class="btn btn_home_slider">Узнать больше</div></a>
+
+                <h3 id="h31">компьютерной техники <br> и электронных устройств</h3>
+                <h3 id="h32" style="display: none;">курьера на дом. Консультация <br> со специалистом</h3>
+                <h3 id="h33" style="display: none;">сил и нервов. Мы поработаем и <br> поволнуемся за Вас!</h3>
+                <h3 id="h34" style="display: none;">сложных проблем. С нами <br> легко. Проверьте сами!</h3>
+
+                <a id="learn-more" href="#anchor_table"><div class="btn btn_home_slider">Узнать больше</div></a>
             </div>
         </div>
         <div class="slider_progress">
             <a id="swiper-button-prev" href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/arrow-left.png" alt=""></a>
-            <div class="slider_number">01</div>
+            <div id="curr-slide-number" class="slider_number">01</div>
             <svg width="144" height="1">
                 <path class="bg_svg" stroke="black" d="M0 10, 144 10"></path>
-                <path class="meter" stroke="#ffc100" d="M0 0, 36 10" style="stroke-dashoffset: 144;"></path>
+                <path id="line" class="meter" stroke="#ffc100" d="M0 0, 36 10" style="stroke-dashoffset: 144;"></path>
             </svg>
             <div class="slider_number">04</div>
             <a id="swiper-button-next" href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/arrow-right.png" alt=""></a>
@@ -436,7 +437,7 @@
         $args = array(
             'post_type'   => 'article',
             'post_status' => 'publish',
-            'posts_per_page' => 3,
+            'posts_per_page' => 30,
             'order' => 'DESC'
         );
 
@@ -446,11 +447,12 @@
             ?>
 
             <?php
+            $index = 1;
             while( $articles->have_posts() ) :
                 $articles->the_post();
                 ?>
 
-                <div class="blog_card">
+                <div id="blog-card<?= $index; ?>" class="blog_card">
                     <div class="blog_card_body">
                         <a href="<?= get_post_permalink(); ?>">
                             <?php the_post_thumbnail(); ?></a>
@@ -469,6 +471,7 @@
 
 
             <?php
+            $index++;
             endwhile;
             wp_reset_postdata();
             ?>
@@ -481,16 +484,16 @@
 
     </div>
     <div class="reviews_pagination blog_pagination">
-        <a href="#"><div class="rev-left"><img src="<?php echo get_template_directory_uri(); ?>/img/rev-left.png" alt=""></div></a>
+        <a id="prev-article" href="#"><div class="rev-left"><img src="<?php echo get_template_directory_uri(); ?>/img/rev-left.png" alt=""></div></a>
         <div class="slider_progress rev-pag">
-            <div class="slider_number">01</div>
+            <div id="articles-curr-slide" class="slider_number">01</div>
             <svg width="144" height="1">
                 <path class="bg_svg" stroke="black" d="M0 10, 144 10"></path>
-                <path class="meter" stroke="#ffc100" d="M0 0, 36 10" style="stroke-dashoffset: 144;"></path>
+                <path id="articles-line" class="meter" stroke="#ffc100" d="M0 0, 36 10" style="stroke-dashoffset: 144;"></path>
             </svg>
-            <div class="slider_number">04</div>
+            <div id="articles-count" class="slider_number">04</div>
         </div>
-        <a href="#"><div class="rev-right"><img src="<?php echo get_template_directory_uri(); ?>/img/rev-right.png" alt=""></div></a>
+        <a id="next-article" href="#"><div class="rev-right"><img src="<?php echo get_template_directory_uri(); ?>/img/rev-right.png" alt=""></div></a>
     </div>
     <a href="#"><div class="btn btn-grey">Читать все статьи</div></a>
 </section>

@@ -25,24 +25,22 @@
     <!--<h3>компьютерной техники <br> и электронных устройств</h3>-->
     <!--<a href="#anchor_table"><div class="btn btn_home_slider">Узнать больше</div></a>-->
     <div style="display: none; position: absolute; top: 0; left: 0;" id="h22">
-        <h2>222222</h2>
+        <h2>22222222</h2>
     </div>
-    <div id="white" style="background-color: #fff; display: none; position: absolute; top: 0; left: 0;"></div>
     <!--<h3 style="display: none;">курьера на дом. Консультация <br> со специалистом</h3>-->
 </div>
 <button id="xxx">click</button>
 <script>
     $(document).ready(function () {
-        $('#white').css('height', $('#h21').height());
-        $('#white').css('width', $('#h21').width());
-        $('#xxx').click(function () {
-            $('#white').effect ("slide", { mode : "show", direction:"right" , distance:500}, 400);
-            setTimeout(function () {
-                $('#h21').toggle();
-                $('#h22').toggle();
-            }, 400);
-            $('#white').effect ("slide", { mode : "hide", direction:"right" , distance:500}, 400);
-        });
+       $('#xxx').click(function () {
+           $('#h21').effect ("slide", { mode : "hide", direction:"left" , distance:500}, 400);
+           $('#h22').effect("slide", {mode : "show",  direction:"right" , distance:500}, 1500);
+       });
+        // $('#h31').css('display', 'none');
+        // $('#h32').css('display', 'none');
+        // $('#h33').css('display', 'none');
+        // $('#h34').css('display', 'none');
+        // $('#h3' + nextIndex).css('display', 'block');
     });
 </script>
 </body>
