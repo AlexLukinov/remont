@@ -88,7 +88,7 @@
 
 </header>
 <section class="section_home">
-    <div class="bg"></div>
+    <div class="bg animate-bg"></div>
     <div class="social">
         <a href="https://www.instagram.com/mastergadget.service/">Instagram</a>
         <a href="https://t.me/mgadgetyalta">Telegram</a>
@@ -257,7 +257,7 @@
 <section class="plast" id="about-us">
     <div class="plast_img">
         <div class="img_deco"></div>
-        <div class="bg"></div>
+        <div class="bg animate-bg"></div>
     </div>
     <div class="plast_content">
         <h2>Давайте знакомиться</h2>
@@ -291,7 +291,7 @@
 <section class="plast plast_reverse">
     <div class="plast_img">
         <div class="img_deco img_deco2"></div>
-        <div class="bg bg-reverse"></div>
+        <div class="bg bg-reverse animate-bg"></div>
     </div>
     <div class="plast_content">
         <h2>Почему мы?</h2>
