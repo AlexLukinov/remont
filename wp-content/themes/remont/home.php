@@ -255,9 +255,10 @@
     </div>
 </section>
 <section class="plast" id="about-us">
-    <div class="plast_img">
-        <div class="img_deco"></div>
-        <div class="bg animate-bg"></div>
+    <div class="plast_img" style="position: relative">
+        <div id="white-div-apple" style="background-color: #fff; width: 100%;height: 100%;position: absolute; top: 0; left: 0;"></div>
+        <div id="apple-img" class="img_deco"></div>
+        <div class="bg"></div>
     </div>
     <div class="plast_content">
         <h2>Давайте знакомиться</h2>
@@ -289,9 +290,10 @@
     </div>
 </section>
 <section class="plast plast_reverse">
-    <div class="plast_img">
-        <div class="img_deco img_deco2"></div>
-        <div class="bg bg-reverse animate-bg"></div>
+    <div class="plast_img" style="position: relative;">
+        <div id="white-div-watch" style="background-color: #fff; width: 100%;height: 100%; position: absolute; top: 0; left: 0;"></div>
+        <div id="watch-img" class="img_deco img_deco2"></div>
+        <div class="bg bg-reverse"></div>
     </div>
     <div class="plast_content">
         <h2>Почему мы?</h2>
