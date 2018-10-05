@@ -41,6 +41,7 @@ $(document).ready(function() { // вся мaгия пoсле зaгрузки с�
 
     // swiper
     var swiper = initSwiper();
+    initAutoSwitchHeaderSlides();
 
     // remove nasty part of next slide to left
     activeSwiperSlide = $('div.swiper-slide.swiper-slide-active').first();
@@ -67,6 +68,12 @@ $(document).ready(function() { // вся мaгия пoсле зaгрузки с�
 
     initArticlesSlider();
     listenSwitchClicksArticlesSlider();
+
+    function initAutoSwitchHeaderSlides() {
+        setInterval(function () {
+            $('#swiper-button-next')[0].click();
+        }, 4000);
+    }
 
     function listenSwitchClicksArticlesSlider() {
         $('#next-article').click(function (e) {
