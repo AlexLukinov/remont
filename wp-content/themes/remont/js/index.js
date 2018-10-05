@@ -7,6 +7,7 @@ $(document).ready(function() { // вся мaгия пoсле зaгрузки с�
 
     initWhiteDivSize();
 
+
     $('#ok-modal').click(function () {
         $('#thank_application').css('display', 'none');
     });
@@ -38,12 +39,27 @@ $(document).ready(function() { // вся мaгия пoсле зaгрузки с�
         offset: 100
     });
 
+    // swiper
     var swiper = initSwiper();
+
+    // remove nasty part of next slide to left
+    activeSwiperSlide = $('div.swiper-slide.swiper-slide-active').first();
+    activeSwiperSlide.width(activeSwiperSlide.width() + 3);
+
     var currHeaderSlide = 1;
 
     // work with article slider
     var currArticleSlide = 1;
-    const blogCards = $('#blog .blog-card');
+    setTimeout(function () {
+        if (isMobile) {
+            $('#blog-card1').css('display', 'block');
+        } else {
+            $('#blog-card1').css('display', 'block');
+            $('#blog-card2').css('display', 'block');
+            $('#blog-card3').css('display', 'block');
+        }
+    }, 500);
+    const blogCards = $('#blog .blog_card');
     const articlesCount = blogCards.length;
 
     var slidesCount = Math.floor(articlesCount / 3);
@@ -53,14 +69,16 @@ $(document).ready(function() { // вся мaгия пoсле зaгрузки с�
     listenSwitchClicksArticlesSlider();
 
     function listenSwitchClicksArticlesSlider() {
-        $('#next-article').click(function () {
-            if (currArticleSlide < articlesCount) {
+        $('#next-article').click(function (e) {
+            e.preventDefault();
+            if (currArticleSlide < slidesCount) {
                 currArticleSlide += 1;
-                articlesSlideChnage(currArticleSlide);
+                articlesSlideChange(currArticleSlide);
             }
         });
 
-        $('#prev-article').click(function () {
+        $('#prev-article').click(function (e) {
+            e.preventDefault();
             if (currArticleSlide > 1) {
                 currArticleSlide -= 1;
                 articlesSlideChange(currArticleSlide);
