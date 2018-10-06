@@ -456,7 +456,7 @@
                 $articles->the_post();
                 ?>
 
-                <div id="blog-card<?= $index; ?>" class="blog_card">
+                <div id="blog-card<?= $index; ?>" style="display: none;" class="blog_card">
                     <div class="blog_card_body">
                         <a href="<?= get_post_permalink(); ?>">
                             <?php the_post_thumbnail(); ?></a>
