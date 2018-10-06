@@ -1424,7 +1424,9 @@ input[type="text"]::placeholder { color: #cccccc; }
 /*swiper*/
 .swiper-container {
     height: 100%;
+
 }
+
 .swiper-slide {
     overflow: hidden;
 }

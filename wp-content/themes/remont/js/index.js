@@ -7,11 +7,19 @@ $(document).ready(function() { // вся мaгия пoсле зaгрузки с�
 
     initWhiteDivSize();
 
+
     $('#ok-modal').click(function () {
         $('#thank_application').css('display', 'none');
     });
-    var uslugiCoordinate = $('#uslugi').offset().top;
-
+    var uslugiCoordinateTop = $('#uslugi').offset().top;
+    var uslugiCoordinateBottom = $('#uslugi').height() + uslugiCoordinateTop;
+    var aboutUsCoordinateTop = $('#about-us').offset().top;
+    var aboutUsCoordinateBottom = $('#about-us').height() + aboutUsCoordinateTop;
+    var contactsCoordinateTop = $('#contacts').offset().top;
+    var contactsCoordinateBottom = $('#contacts').height() + contactsCoordinateTop;
+    var blogCoordinateTop = $('#blog').offset().top;
+    var blogCoordinateBottom = $('#blog').height() + blogCoordinateTop;
+    
     var appleImgCoordinate = $('#apple-img').offset().top;
     var watchImgCoordinate = $('#watch-img').offset().top;
     var appleImgAlreadyShown = false;
@@ -19,21 +27,42 @@ $(document).ready(function() { // вся мaгия пoсле зaгрузки с�
 
     $(window).scroll(function(){
         var currCoordinate = $(window).scrollTop();
-        if (currCoordinate >= 0){
+        if (currCoordinate >= 0 && currCoordinate < uslugiCoordinateTop){
             $('#item_circle1').addClass('active');
+            $('#item_circle2').removeClass('active');
+            $('#item_circle3').removeClass('active');
+            $('#item_circle4').removeClass('active');
+            $('#item_circle5').removeClass('active');
         }
-        if (currCoordinate >= 1000 && currCoordinate<= 2000){
+        if (currCoordinate >= uslugiCoordinateTop && currCoordinate<= uslugiCoordinateBottom){
             $('#item_circle2').addClass('active');
+            $('#item_circle1').removeClass('active');
+            $('#item_circle3').removeClass('active');
+            $('#item_circle4').removeClass('active');
+            $('#item_circle5').removeClass('active');
         }
-        if (currCoordinate >= 2000 && currCoordinate<= 6000){
+        if (currCoordinate >= aboutUsCoordinateTop && currCoordinate<= aboutUsCoordinateBottom){
             $('#item_circle3').addClass('active');
+            $('#item_circle1').removeClass('active');
+            $('#item_circle2').removeClass('active');
+            $('#item_circle4').removeClass('active');
+            $('#item_circle5').removeClass('active');
         }
-        if (currCoordinate >= 6000 && currCoordinate<= 7000){
+        if (currCoordinate >= contactsCoordinateTop && currCoordinate<= contactsCoordinateBottom){
             $('#item_circle4').addClass('active');
+            $('#item_circle1').removeClass('active');
+            $('#item_circle2').removeClass('active');
+            $('#item_circle3').removeClass('active');
+            $('#item_circle5').removeClass('active');
         }
-        if (currCoordinate >= 7000 && currCoordinate<= 8000){
+        if (currCoordinate >= blogCoordinateTop && currCoordinate<= blogCoordinateBottom){
             $('#item_circle5').addClass('active');
+            $('#item_circle1').removeClass('active');
+            $('#item_circle2').removeClass('active');
+            $('#item_circle3').removeClass('active');
+            $('#item_circle4').removeClass('active');
         }
+
         if (currCoordinate >= (appleImgCoordinate - 200) && !appleImgAlreadyShown) {
             $('#white-div-apple').effect("slide", { mode : "hide", direction:"right" , distance:500}, 400);
             appleImgAlreadyShown = true;
@@ -50,12 +79,28 @@ $(document).ready(function() { // вся мaгия пoсле зaгрузки с�
         offset: 100
     });
 
+    // swiper
     var swiper = initSwiper();
+    initAutoSwitchHeaderSlides();
+
+    // remove nasty part of next slide to left
+    activeSwiperSlide = $('div.swiper-slide.swiper-slide-active').first();
+    activeSwiperSlide.width(activeSwiperSlide.width() + 3);
+
     var currHeaderSlide = 1;
 
     // work with article slider
     var currArticleSlide = 1;
-    const blogCards = $('#blog .blog-card');
+    setTimeout(function () {
+        if (isMobile) {
+            $('#blog-card1').css('display', 'flex');
+        } else {
+            $('#blog-card1').css('display', 'flex');
+            $('#blog-card2').css('display', 'flex');
+            $('#blog-card3').css('display', 'flex');
+        }
+    }, 500);
+    const blogCards = $('#blog .blog_card');
     const articlesCount = blogCards.length;
 
     var slidesCount = Math.floor(articlesCount / 3);
@@ -64,15 +109,23 @@ $(document).ready(function() { // вся мaгия пoсле зaгрузки с�
     initArticlesSlider();
     listenSwitchClicksArticlesSlider();
 
+    function initAutoSwitchHeaderSlides() {
+        setInterval(function () {
+            $('#swiper-button-next')[0].click();
+        }, 4000);
+    }
+
     function listenSwitchClicksArticlesSlider() {
-        $('#next-article').click(function () {
-            if (currArticleSlide < articlesCount) {
+        $('#next-article').click(function (e) {
+            e.preventDefault();
+            if (currArticleSlide < slidesCount) {
                 currArticleSlide += 1;
-                articlesSlideChnage(currArticleSlide);
+                articlesSlideChange(currArticleSlide);
             }
         });
 
-        $('#prev-article').click(function () {
+        $('#prev-article').click(function (e) {
+            e.preventDefault();
             if (currArticleSlide > 1) {
                 currArticleSlide -= 1;
                 articlesSlideChange(currArticleSlide);
@@ -90,11 +143,11 @@ $(document).ready(function() { // вся мaгия пoсле зaгрузки с�
     function handleBlogCardsVisibility(currArticleSlide) {
         blogCards.css('display', 'none');
         if (isMobile) {
-            $('#blog-card' + currArticleSlide).css('display', 'block');
+            $('#blog-card' + currArticleSlide).css('display', 'flex');
         } else {
-            $('#blog-card' + currArticleSlide*3).css('display', 'block');
-            $('#blog-card' + (currArticleSlide*3 - 1)).css('display', 'block');
-            $('#blog-card' + (currArticleSlide*3 - 2)).css('display', 'block');
+            $('#blog-card' + currArticleSlide*3).css('display', 'flex');
+            $('#blog-card' + (currArticleSlide*3 - 1)).css('display', 'flex');
+            $('#blog-card' + (currArticleSlide*3 - 2)).css('display', 'flex');
         }
     }
 

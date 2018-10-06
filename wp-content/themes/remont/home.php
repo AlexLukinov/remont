@@ -155,7 +155,7 @@
         </div>
     </div>
     <div class="nav-fixed">
-        <div class="item_circle" id="item_circle1"></div>
+        <div class="item_circle active" id="item_circle1"></div>
         <div class="item_circle" id="item_circle2"></div>
         <div class="item_circle" id="item_circle3"></div>
         <div class="item_circle" id="item_circle4"></div>
@@ -456,7 +456,7 @@
                 $articles->the_post();
                 ?>
 
-                <div id="blog-card<?= $index; ?>" class="blog_card">
+                <div id="blog-card<?= $index; ?>" style="display: none;" class="blog_card">
                     <div class="blog_card_body">
                         <a href="<?= get_post_permalink(); ?>">
                             <?php the_post_thumbnail(); ?></a>
