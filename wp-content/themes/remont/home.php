@@ -499,7 +499,7 @@
         </div>
         <a id="next-article" href="#"><div class="rev-right"><img src="<?php echo get_template_directory_uri(); ?>/img/rev-right.png" alt=""></div></a>
     </div>
-    <a href="#"><div class="btn btn-grey">Читать все статьи</div></a>
+    <a href="/all-articles"><div class="btn btn-grey">Читать все статьи</div></a>
 </section>
 
 <!--модальные окна-->
