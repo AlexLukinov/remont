@@ -88,7 +88,7 @@
 
 </header>
 <section class="section_home">
-    <div class="bg"></div>
+    <div class="bg animate-bg"></div>
     <div class="social">
         <a href="https://www.instagram.com/mastergadget.service/">Instagram</a>
         <a href="https://t.me/mgadgetyalta">Telegram</a>
@@ -155,7 +155,7 @@
         </div>
     </div>
     <div class="nav-fixed">
-        <div class="item_circle" id="item_circle1"></div>
+        <div class="item_circle active" id="item_circle1"></div>
         <div class="item_circle" id="item_circle2"></div>
         <div class="item_circle" id="item_circle3"></div>
         <div class="item_circle" id="item_circle4"></div>

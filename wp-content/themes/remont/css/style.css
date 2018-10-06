@@ -618,16 +618,9 @@ a .phone:hover {
     top: 18%;
     left: 3%;
     z-index: -1;
-}
-.plast_img .bg::before{
-    content: "";
-    width: 0%;
-}
-.plast_img .bg::after{
-    content: "";
     width: 26%;
-    animation: fade-bg;
 }
+
 .fade-bg {
     animation-name: fade-bg;
     -webkit-animation-name: fade-bg;
@@ -1431,7 +1424,7 @@ input[type="text"]::placeholder { color: #cccccc; }
 /*swiper*/
 .swiper-container {
     height: 100%;
-    width: 90%;
+
 }
 
 .swiper-slide {
