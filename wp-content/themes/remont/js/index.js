@@ -1,5 +1,5 @@
 $(document).ready(function() { // вся мaгия пoсле зaгрузки стрaницы
-    var isMobile = window.matchMedia("only screen and (max-width: 760px)").matches;
+    var isMobile = window.matchMedia("only screen and (max-width: 768px)").matches;
 
     initHamburgerMenuClick();
 
@@ -7,6 +7,7 @@ $(document).ready(function() { // вся мaгия пoсле зaгрузки с�
 
     initWhiteDivSize();
 
+    $('#white-div-watch').width($('#white-div-watch').width() + 114);
 
     $('#ok-modal').click(function () {
         $('#thank_application').css('display', 'none');
@@ -64,12 +65,12 @@ $(document).ready(function() { // вся мaгия пoсле зaгрузки с�
         }
 
         if (currCoordinate >= (appleImgCoordinate - 200) && !appleImgAlreadyShown) {
-            $('#white-div-apple').effect("slide", { mode : "hide", direction:"right" , distance:500}, 400);
+            $('#white-div-apple').effect("slide", { mode : "hide", direction:"right" , distance:500}, 200);
             appleImgAlreadyShown = true;
         }
 
         if (currCoordinate >= (watchImgCoordinate - 200) && !watchImgAlreadyShown) {
-            $('#white-div-watch').effect("slide", { mode : "hide", direction:"left" , distance:500}, 400);
+            $('#white-div-watch').effect("slide", { mode : "hide", direction:"right" , distance:500}, 200);
             watchImgAlreadyShown = true;
         }
     });
@@ -84,8 +85,12 @@ $(document).ready(function() { // вся мaгия пoсле зaгрузки с�
     initAutoSwitchHeaderSlides();
 
     // remove nasty part of next slide to left
-    activeSwiperSlide = $('div.swiper-slide.swiper-slide-active').first();
-    activeSwiperSlide.width(activeSwiperSlide.width() + 3);
+    activeSwiperSlide = $('div.home_slider_img').first();
+    if (isMobile) {
+        activeSwiperSlide.width('77%');
+    } else {
+        activeSwiperSlide.width('44%');
+    }
 
     var currHeaderSlide = 1;
 
@@ -192,8 +197,12 @@ $(document).ready(function() { // вся мaгия пoсле зaгрузки с�
 
     // white div is open-close h2 in header
     function initWhiteDivSize() {
-        $('#white-div').css('height', $('#h22').height() + 3);
-        $('#white-div').css('width', $('#h22').width() + 10);
+        if (isMobile) {
+            $('#white-div').css('height', $('#h22').height() + 10);
+        } else {
+            $('#white-div').css('height', $('#h22').height() + 23);
+        }
+        $('#white-div').css('width', $('#h22').width() + 100);
     }
 
     function handleContent (nextIndex) {

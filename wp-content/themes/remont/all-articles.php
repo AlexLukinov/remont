@@ -35,20 +35,21 @@
         </div>
     </div>
 </header>
-<div class="shadow">
-    <div class="article_head_mob">
-        <div class="flex-img">
-            <img src="img/arrow-back.png" alt="back">
-        </div>
-        <div class="article_avatar">
-            <div class="avatar_foto"></div>
-        </div>
-        <div class="flex-img">
-            <img src="img/share.png" alt="Share">
+
+<div class="article_page all-article_page">
+    <div class="shadow">
+        <div class="article_head_mob">
+            <div class="flex-img">
+                <img src="img/arrow-back.png" alt="back">
+            </div>
+            <div class="article_avatar">
+                <div class="avatar_foto"></div>
+            </div>
+            <div class="flex-img">
+                <img src="img/share.png" alt="Share">
+            </div>
         </div>
     </div>
-</div>
-<div class="article_page">
     <div class="menu menu_article">
         <div class="hamburgerIcon hamburgerIconArticle"></div>
     </div>
@@ -92,7 +93,6 @@
     </div>
     <div class="article_body all_article_body">
         <h2>Блог и другие полезные статьи</h2>
-        <div class="line"></div>
         <div class="blog_block blog_block_article">
 
 
@@ -148,7 +148,7 @@
 
         </div>
         <div class="reviews_pagination blog_pagination">
-            <a href="#"><div class="rev-left"><img src="img/rev-left.png" alt=""></div></a>
+            <a href="#"><div class="rev-left"><img src="<?php echo get_template_directory_uri(); ?>/img/rev-left.png" alt=""></div></a>
             <div class="slider_progress rev-pag">
                 <div class="slider_number">01</div>
                 <svg width="144" height="1">
@@ -157,7 +157,7 @@
                 </svg>
                 <div class="slider_number">04</div>
             </div>
-            <a href="#"><div class="rev-right"><img src="img/rev-right.png" alt=""></div></a>
+            <a href="#"><div class="rev-right"><img src="<?php echo get_template_directory_uri(); ?>/img/rev-right.png" alt=""></div></a>
         </div>
     </div>
 </div>

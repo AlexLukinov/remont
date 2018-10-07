@@ -52,7 +52,7 @@
                     <div class="menu_cap">ЗВОНИ:</div>
                     <div class="menu_name">+7 (978) 042-82-62</div>
                 </a>
-                <a href="#" class="menu_titr" style=" height:30px; color: transparent; cursor: none">
+                <a href="#" class="menu_titr menu_titr_trans">
 
                 </a>
                 <a href="#" class="menu_titr">
@@ -430,6 +430,7 @@
     </div>
 </section>
 <section class="blog_section" id="blog">
+    <div class="line"></div>
     <div class="blog_caption">
         <h2>Блог и другие<br> полезные статьи</h2>
     </div>

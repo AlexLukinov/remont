@@ -127,10 +127,20 @@
             </div>
             <div class="article_head">
                 <div class="avatar">
-                    <div class="avatar_foto"></div>
+					<?php $author = get_post_meta( get_the_ID(), 'article_author', true ); ?>
+					<?php if ($author == 'а') { ?>
+                    	<div class="avatar_foto"></div>
+					<?php } else { ?>
+						<div class="avatar_foto avatar_foto_alena"></div>
+					<?php } ?>
                     <div class="avatar_info">
-                        <h4>Илья Кружинский</h4>
-                        <h5>Основатель и руководитель Master Gadget</h5>
+						<?php if ($author == 'а') { ?>
+                        	<h4>Алёна Тихомолова</h4>
+                        	<h5>Веб дизайнер и консультант Master Gadget</h5>
+						<?php } else { ?>
+							<h4>Илья Кружинский</h4>
+                        	<h5>Основатель и руководитель Master Gadget</h5>
+						<?php } ?>
                     </div>
                 </div>
                 <div class="article_head_content">
