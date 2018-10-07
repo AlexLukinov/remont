@@ -740,7 +740,7 @@ a .phone:hover {
     margin-right: 0;
 }
 .plast_img .bg-reverse {
-    left: 71%;
+    left: 97%;
 }
 .img_deco2 {
     background-image: url("../img/stul.jpg");
@@ -954,6 +954,7 @@ a .phone:hover {
     font-size: 15px;
     color: #697b83;
     padding: 0 34px;
+    padding-right: 0;
 }
 .blog_card_footer {
     display: flex;
