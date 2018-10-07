@@ -52,7 +52,7 @@
                     <div class="menu_cap">ЗВОНИ:</div>
                     <div class="menu_name">+7 (978) 042-82-62</div>
                 </a>
-                <a href="#" class="menu_titr" style=" height:30px; color: transparent; cursor: none">
+                <a href="#" class="menu_titr menu_titr_trans">
 
                 </a>
                 <a href="#" class="menu_titr">
@@ -430,6 +430,7 @@
     </div>
 </section>
 <section class="blog_section" id="blog">
+    <div class="line"></div>
     <div class="blog_caption">
         <h2>Блог и другие<br> полезные статьи</h2>
     </div>
@@ -499,7 +500,7 @@
         </div>
         <a id="next-article" href="#"><div class="rev-right"><img src="<?php echo get_template_directory_uri(); ?>/img/rev-right.png" alt=""></div></a>
     </div>
-    <a href="#"><div class="btn btn-grey">Читать все статьи</div></a>
+    <a href="/all-articles"><div class="btn btn-grey">Читать все статьи</div></a>
 </section>
 
 <!--модальные окна-->
