@@ -55,11 +55,11 @@
                 <a href="#" class="menu_titr menu_titr_trans">
 
                 </a>
-                <a href="#" class="menu_titr">
+                <a href="https://www.instagram.com/helen.dsgn/?utm_source=ig_profile_share&igshid=l0y2x7d901pf" class="menu_titr">
                     <div class="menu_cap">ДИЗАЙНЕР САЙТА:</div>
                     <div class="menu_name">Helen Tihomolova</div>
                 </a>
-                <a href="#" class="menu_titr">
+                <a href="https://vk.com/ekaterinalukinova" class="menu_titr">
                     <div class="menu_cap">РАЗРАБОТЧИК:</div>
                     <div class="menu_name">Ekaterina Lukinova</div>
                 </a>
