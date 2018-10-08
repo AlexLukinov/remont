@@ -303,6 +303,12 @@ header {
     width: max-content;
     letter-spacing: 1;
 }
+.social a:hover {
+    color: #ffc003;
+}
+.titr-name:hover {
+    color: #ffc003;
+}
 section {
     display: flex;
     justify-content: space-between;
@@ -796,6 +802,7 @@ a .phone:hover {
 .reviews_content {
     font-family: Montserrat-Italic;
     font-size: 15px;
+    line-height: 1.35;
 }
 .reviews h2 {
     font-size: 55px;
@@ -957,6 +964,13 @@ a .phone:hover {
     padding: 0 34px;
     padding-right: 0;
 }
+.blog_block_article .blog_card .blog_card_text p {
+    padding: 0;
+}
+.article_body .blog_pagination {
+    width: 110%;
+    margin-top: 60px;
+}
 .blog_card_footer {
     display: flex;
     justify-content: space-between;
@@ -986,7 +1000,7 @@ a .phone:hover {
     margin-left: 34px;
 }
 a .btn-grey {
-    margin: 40px auto;
+    margin: 40px 46%;
 }
 .blog_card img {
     width: 100%;
@@ -1095,7 +1109,7 @@ footer   {
 }
 .article_head .avatar {
     width: 25%;
-    height: 40px;
+    height: 60px;
     margin-right: 5%;
 }
 .article_caption h1 {
@@ -1170,6 +1184,10 @@ footer   {
 .blog_block_article {
     width: 110%;
     margin: 35px auto;
+    flex-wrap: wrap;
+}
+.blog_block_article .blog_card {
+    margin-bottom: 30px;
 }
 .logo_article {
     position: relative;
