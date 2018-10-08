@@ -168,7 +168,7 @@ add_action( 'phpmailer_init', 'send_smtp_email' );
 function send_smtp_email( $phpmailer ) {
     $phpmailer->isSMTP();
     $phpmailer->Host       = SMTP_HOST;
-    //$phpmailer->SMTPAuth   = SMTP_AUTH;
+    $phpmailer->SMTPAuth   = SMTP_AUTH;
     $phpmailer->Port       = SMTP_PORT;
     //$phpmailer->SMTPSecure = SMTP_SECURE;
     $phpmailer->Username   = SMTP_USERNAME;
@@ -186,8 +186,15 @@ function review_callback() {
 
     if ($post_id) {
         // insert post meta
-        add_post_meta($post_id, 'review_text', $_POST['application']);
-        add_post_meta($post_id, 'review_phone', $_POST['number_tel']);
+        if ( ! add_post_meta( $post_id, 'review_text', $_POST['application'] ) ) {
+            update_post_meta( $post_id, 'review_text', $_POST['application'] );
+        }
+        if ( ! add_post_meta( $post_id, 'review_phone', $_POST['numer_tel'] ) ) {
+            update_post_meta( $post_id, 'review_phone', $_POST['numer_tel'] );
+        }
+        if ( ! add_post_meta( $post_id, 'review_name', $_POST['name'] ) ) {
+            update_post_meta( $post_id, 'review_name', $_POST['name'] );
+        }
 
         echo 'Все хорошо';
     } else {
@@ -208,13 +215,21 @@ function zayavka_callback() {
 
     if ($post_id) {
         // insert post meta
-        add_post_meta($post_id, 'zayavka_text', $_POST['application']);
-        add_post_meta($post_id, 'zayavka_phone', $_POST['number_tel']);
+        // add_post_meta($post_id, 'zayavka_text', $_POST['application']);
+		if ( ! add_post_meta( $post_id, 'zayavka_text', $_POST['application'] ) ) { 
+   			update_post_meta( $post_id, 'zayavka_text', $_POST['application'] );
+		}
+		if ( ! add_post_meta( $post_id, 'zayavka_tel', $_POST['number_tel'] ) ) { 
+   			update_post_meta( $post_id, 'zayavka_tel', $_POST['number_tel'] );
+		}
+        if ( ! add_post_meta( $post_id, 'zayavka_name', $_POST['name'] ) ) {
+            update_post_meta( $post_id, 'zayavka_name', $_POST['name'] );
+        }
 
         echo 'Ваша заявка принята!';
 		
     	//отправка почты здесь
-   	 	wp_mail("einstein701@gmail.com", "Новая заявка", "Поступила новая заявка от: " . $_POST['name'] . ", телефон: " . $_POST['number_tel'] . ", текст: " . $_POST['application']);
+   	 	wp_mail("mg.prof@ya.ru", "Новая заявка", "Поступила новая заявка от: " . $_POST['name'] . ", телефон: " . $_POST['number_tel'] . ", текст: " . $_POST['application']);
     } else {
         echo 'Что-то пошло не так';
     }

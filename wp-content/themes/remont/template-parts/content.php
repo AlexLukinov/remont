@@ -129,9 +129,9 @@
                 <div class="avatar">
 					<?php $author = get_post_meta( get_the_ID(), 'article_author', true ); ?>
 					<?php if ($author == 'а') { ?>
-                    	<div class="avatar_foto"></div>
+                        <div class="avatar_foto avatar_foto_alena"></div>
 					<?php } else { ?>
-						<div class="avatar_foto avatar_foto_alena"></div>
+                        <div class="avatar_foto"></div>
 					<?php } ?>
                     <div class="avatar_info">
 						<?php if ($author == 'а') { ?>

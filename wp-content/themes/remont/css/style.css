@@ -1354,6 +1354,10 @@ input[type="text"]::placeholder { color: #cccccc; }
     width: 142px;
 }
 
+.avatar_foto_alena {
+    background-image: url("../img/foto-alena.jpg");
+}
+
 .swiper-button-prev {
     -webkit-transform: translateX(50px);
     transform: translateX(50px);
