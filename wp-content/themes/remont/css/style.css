@@ -40,6 +40,7 @@
 }
 body {
     color: #343434;
+    overflow-x: hidden;
 }
 a {
     font-family: Montserrat-Bold;

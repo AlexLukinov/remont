@@ -259,7 +259,7 @@
                     </div>
                 </a>
             </div>
-            <a href="#"><div class="btn btn-grey">Читать все статьи</div></a>
+            <a href="/all-articles"><div class="btn btn-grey">Читать все статьи</div></a>
         </div>
     </div>
 </body>

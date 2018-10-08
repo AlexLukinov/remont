@@ -163,7 +163,7 @@
     </div>
     <p class="phone-p_mobile">Заказать звонок</p>
     <a href="#">
-        <div class="phone ">
+        <div id="phone-button" class="phone ">
             <img class="img_phone" src="<?php echo get_template_directory_uri(); ?>/img/phone.png">
             <p class="phone-p animated fadeIn">Заказать звонок</p>
         </div>
