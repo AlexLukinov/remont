@@ -361,6 +361,7 @@ $(document).ready(function() { // вся мaгия пoсле зaгрузки с�
         });
     }
 
+
     function initModals() {
         // модальное окно
         $("#review-modal").each( function(){

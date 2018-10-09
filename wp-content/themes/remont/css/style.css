@@ -2196,3 +2196,15 @@ and (min-width : 1919px) {
 .visible{
     opacity:1;
 }
+
+#social-share {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.article_share {
+    position: relative;
+}
