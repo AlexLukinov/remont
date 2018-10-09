@@ -59,7 +59,10 @@
                 <div class="avatar_foto"></div>
             </div>
             <div class="flex-img">
-                <img src="<?php echo get_template_directory_uri(); ?>/img/share.png" alt="Share">
+                <div id="social-share-mobile" style="display: none;">
+                    <?php echo do_shortcode('[Sassy_Social_Share]') ?>
+                </div>
+                <img class="img_share" src="<?php echo get_template_directory_uri(); ?>/img/share.png" alt="Share">
             </div>
         </div>
     </div>
@@ -150,7 +153,7 @@
                     </div>
                     <div class="article_info">
                         <div class="article_date"><?php the_date('j F Y'); ?></div>
-                        <div class="article_share">
+                        <div class="article_share img_share">
                             <div id="social-share" style="display: none;">
                                 <?php echo do_shortcode('[Sassy_Social_Share]') ?>
                             </div>
@@ -268,8 +271,9 @@
     </div>
     <script>
         $(document).ready(function () {
-            $('.article_share').on('click', function () {
+            $('.img_share').on('click', function () {
                 $('#social-share').toggle("blind");
+                $('#social-share-mobile').toggle("blind");
             });
         });
     </script>
