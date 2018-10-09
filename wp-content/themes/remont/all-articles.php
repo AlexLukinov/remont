@@ -58,10 +58,10 @@
             <div class="logo logo_menu_mob" >MASTER GADGET</div>
             <nav>
                 <a href="/">Главная</a>
-                <a href="#uslugi">Услуги</a>
-                <a href="#about-us">О нас</a>
-                <a href="#contacts">Контакты</a>
-                <a href="#blog">Блог</a>
+                <a href="/#uslugi">Услуги</a>
+                <a href="/#about-us">О нас</a>
+                <a href="/#contacts">Контакты</a>
+                <a href="/#blog">Блог</a>
             </nav>
             <div class="menu_contacts">
                 <a href="#" class="menu_titr zvoni">
@@ -147,18 +147,18 @@
 
 
         </div>
-        <div class="reviews_pagination blog_pagination">
-            <a href="#"><div class="rev-left"><img src="<?php echo get_template_directory_uri(); ?>/img/rev-left.png" alt=""></div></a>
-            <div class="slider_progress rev-pag">
-                <div class="slider_number">01</div>
-                <svg width="144" height="1">
-                    <path class="bg_svg" stroke="black" d="M0 10, 144 10"></path>
-                    <path class="meter" stroke="#ffc100" d="M0 0, 36 10" style="stroke-dashoffset: 144;"></path>
-                </svg>
-                <div class="slider_number">04</div>
-            </div>
-            <a href="#"><div class="rev-right"><img src="<?php echo get_template_directory_uri(); ?>/img/rev-right.png" alt=""></div></a>
-        </div>
+<!--        <div class="reviews_pagination blog_pagination">-->
+<!--            <a href="#"><div class="rev-left"><img src="--><?php //echo get_template_directory_uri(); ?><!--/img/rev-left.png" alt=""></div></a>-->
+<!--            <div class="slider_progress rev-pag">-->
+<!--                <div class="slider_number">01</div>-->
+<!--                <svg width="144" height="1">-->
+<!--                    <path class="bg_svg" stroke="black" d="M0 10, 144 10"></path>-->
+<!--                    <path class="meter" stroke="#ffc100" d="M0 0, 36 10" style="stroke-dashoffset: 144;"></path>-->
+<!--                </svg>-->
+<!--                <div class="slider_number">04</div>-->
+<!--            </div>-->
+<!--            <a href="#"><div class="rev-right"><img src="--><?php //echo get_template_directory_uri(); ?><!--/img/rev-right.png" alt=""></div></a>-->
+<!--        </div>-->
     </div>
 </div>
 <?php

@@ -96,6 +96,8 @@ $(document).ready(function() { // вся мaгия пoсле зaгрузки с�
 
     // work with article slider
     var currArticleSlide = 1;
+    var currReviewSlide = 1;
+    
     setTimeout(function () {
         if (isMobile) {
             $('#blog-card1').css('display', 'flex');
@@ -104,15 +106,34 @@ $(document).ready(function() { // вся мaгия пoсле зaгрузки с�
             $('#blog-card2').css('display', 'flex');
             $('#blog-card3').css('display', 'flex');
         }
+        
+        if (isMobile) {
+            $('#review-card1').css('display', 'flex');
+        } else {
+            $('#review-card1').css('display', 'flex');
+            $('#review-card2').css('display', 'flex');
+            $('#review-card3').css('display', 'flex');
+            $('#review-card4').css('display', 'flex');
+        }
     }, 500);
+    
     const blogCards = $('#blog .blog_card');
     const articlesCount = blogCards.length;
+    
+    const reviewsCards = $('.reviews_block_item');
+    const reviewsCount = reviewsCards.length;
 
-    var slidesCount = Math.floor(articlesCount / 3);
-    var oneDevision = Math.floor(3*144 / slidesCount);
+    var slidesCount = Math.floor(articlesCount / 3) + 1;
+    var oneDevision = Math.floor(144 / slidesCount);
+    
+    var reviewsSlidesCount = Math.floor(reviewsCount / 4) + 1;
+    var reviewsOneDevision = Math.floor(144 / reviewsSlidesCount);
 
     initArticlesSlider();
     listenSwitchClicksArticlesSlider();
+    
+    initReviewsSlider();
+    listenSwitchClicksReviewsSlider();
 
     function initAutoSwitchHeaderSlides() {
         setInterval(function () {
@@ -138,11 +159,36 @@ $(document).ready(function() { // вся мaгия пoсле зaгрузки с�
         });
     }
 
+    function listenSwitchClicksReviewsSlider() {
+        $('#next-review').click(function (e) {
+            e.preventDefault();
+            if (currReviewSlide < slidesCount) {
+                currReviewSlide += 1;
+                reviewsSlideChange(currReviewSlide);
+            }
+        });
+
+        $('#prev-review').click(function (e) {
+            e.preventDefault();
+            if (currReviewSlide > 1) {
+                currReviewSlide -= 1;
+                reviewsSlideChange(currReviewSlide);
+            }
+        });
+    }
+
     function articlesSlideChange(currArticleSlide) {
         handleSliderLine($('#articles-line'), oneDevision*currArticleSlide);
         handleBlogCardsVisibility(currArticleSlide);
         let articlesCurrSlideText = currArticleSlide > 9 ? currArticleSlide : '0' + currArticleSlide;
         $('#articles-curr-slide').text(articlesCurrSlideText);
+    }
+
+    function reviewsSlideChange(currReviewSlide) {
+        handleSliderLine($('#reviews-line'), reviewsOneDevision*currReviewSlide);
+        handleReviewsCardsVisibility(currReviewSlide);
+        let reviewsCurrSlideText = currReviewSlide > 9 ? currReviewSlide : '0' + currReviewSlide;
+        $('#reviews-curr-slide').text(reviewsCurrSlideText);
     }
 
     function handleBlogCardsVisibility(currArticleSlide) {
@@ -156,12 +202,23 @@ $(document).ready(function() { // вся мaгия пoсле зaгрузки с�
         }
     }
 
+    function handleReviewsCardsVisibility(currReviewSlide) {
+        reviewsCards.css('display', 'none');
+        if (isMobile) {
+            $('#review-card' + currReviewSlide).css('display', 'flex');
+        } else {
+            $('#review-card' + currReviewSlide*3).css('display', 'flex');
+            $('#review-card' + (currReviewSlide*3 - 1)).css('display', 'flex');
+            $('#review-card' + (currReviewSlide*3 - 2)).css('display', 'flex');
+            $('#review-card' + (currReviewSlide*3 - 3)).css('display', 'flex');
+        }
+    }
+
     function initArticlesSlider() {
         blogCards.css('display', 'none');
 
         if (isMobile) {
             slidesCount = articlesCount;
-            oneDevision = Math.floor(144 / slidesCount);
         }
 
         let articlesCountText = slidesCount > 9 ? slidesCount : '0' + slidesCount;
@@ -170,6 +227,20 @@ $(document).ready(function() { // вся мaгия пoсле зaгрузки с�
 
         $('#articles-curr-slide').text('01');
         handleSliderLine($('#articles-line'), oneDevision);
+    }
+
+    function initReviewsSlider() {
+        reviewsCards.css('display', 'none');
+
+        if (isMobile) {
+            reviewsSlidesCount = reviewsCount;
+        }
+
+        let reviewsCountText = reviewsSlidesCount > 9 ? reviewsSlidesCount : '0' + reviewsSlidesCount;
+        $('#reviews-count').text(reviewsCountText);
+
+        $('#reviews-curr-slide').text('01');
+        handleSliderLine($('#reviews-line'), reviewsOneDevision);
     }
 
     function headerSliderChange(index) {
@@ -290,6 +361,7 @@ $(document).ready(function() { // вся мaгия пoсле зaгрузки с�
         });
     }
 
+
     function initModals() {
         // модальное окно
         $("#review-modal").each( function(){
@@ -334,7 +406,7 @@ $(document).ready(function() { // вся мaгия пoсле зaгрузки с�
 
         });
 
-        $('a.open_application').click( function(event){ // лoвим клик пo ссылки с id="go"
+        $('a.open_application, #phone-button').click( function(event){ // лoвим клик пo ссылки с id="go"
             event.preventDefault(); // выключaем стaндaртную рoль элементa
             $('#application').fadeIn(400, // снaчaлa плaвнo пoкaзывaем темную пoдлoжку
                 function(){ // пoсле выпoлнения предъидущей aнимaции

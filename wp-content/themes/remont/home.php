@@ -163,7 +163,7 @@
     </div>
     <p class="phone-p_mobile">Заказать звонок</p>
     <a href="#">
-        <div class="phone ">
+        <div id="phone-button" class="phone ">
             <img class="img_phone" src="<?php echo get_template_directory_uri(); ?>/img/phone.png">
             <p class="phone-p animated fadeIn">Заказать звонок</p>
         </div>
@@ -322,7 +322,7 @@
         $args = array(
             'post_type'   => 'review',
             'post_status' => 'publish',
-            'posts_per_page' => 4,
+            'posts_per_page' => 30,
             'order' => 'DESC'
         );
 
@@ -332,11 +332,12 @@
             ?>
 
             <?php
+            $index = 1;
             while( $articles->have_posts() ) :
                 $articles->the_post();
                 ?>
 
-                <div class="reviews_block_item">
+                <div id="review-card<?= $index; ?>" class="reviews_block_item">
                     <?php $gender = get_post_meta( get_the_ID(), 'review_gender', true ); ?>
                     <?php if (strtolower($gender) == 'м') { ?>
                         <img class="img_reviews" src="<?php echo get_template_directory_uri(); ?>/img/reviews_avatar-men.png" alt="">
@@ -351,6 +352,7 @@
 
 
             <?php
+            $index++;
             endwhile;
             wp_reset_postdata();
             ?>
@@ -362,16 +364,16 @@
 
     </div>
     <div class="reviews_pagination">
-        <a href="#"><div class="rev-left"><img src="<?php echo get_template_directory_uri(); ?>/img/rev-left.png" alt=""></div></a>
+        <a id="prev-review" href="#"><div class="rev-left"><img src="<?php echo get_template_directory_uri(); ?>/img/rev-left.png" alt=""></div></a>
         <div class="slider_progress rev-pag">
-            <div class="slider_number">01</div>
+            <div id="reviews-curr-slide" class="slider_number">01</div>
             <svg width="144" height="1">
                 <path class="bg_svg" stroke="black" d="M0 10, 144 10"></path>
-                <path class="meter" stroke="#ffc100" d="M0 0, 36 10" style="stroke-dashoffset: 144;"></path>
+                <path id="reviews-line" class="meter" stroke="#ffc100" d="M0 0, 36 10" style="stroke-dashoffset: 144;"></path>
             </svg>
-            <div class="slider_number">04</div>
+            <div id="reviews-count" class="slider_number">04</div>
         </div>
-        <a href="#"><div class="rev-right"><img src="<?php echo get_template_directory_uri(); ?>/img/rev-right.png" alt=""></div></a>
+        <a id="next-review" href="#"><div class="rev-right"><img src="<?php echo get_template_directory_uri(); ?>/img/rev-right.png" alt=""></div></a>
     </div>
     <a href="#" id="rev-a"><div class="btn">Оставить отзыв</div></a>
 </section>

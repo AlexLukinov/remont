@@ -11,16 +11,17 @@
             integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl"
             crossorigin="anonymous">
     </script>
-    <script src='js/anime.min.js'></script>
-    <script src='js/path-slider.min.js'></script>
-    <script src="<?php echo get_template_directory_uri(); ?>/js/index.js"></script>
-    <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.lettering.js"></script>
-    <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.fullpage.min.js"></script>
-    <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.textillate.js"></script>
+<!--    <script src='js/anime.min.js'></script>-->
+<!--    <script src='js/path-slider.min.js'></script>-->
+<!--    <script src="--><?php //echo get_template_directory_uri(); ?><!--/js/index.js"></script>-->
+<!--    <script type="text/javascript" src="--><?php //echo get_template_directory_uri(); ?><!--/js/jquery.lettering.js"></script>-->
+<!--    <script type="text/javascript" src="--><?php //echo get_template_directory_uri(); ?><!--/js/jquery.fullpage.min.js"></script>-->
+<!--    <script type="text/javascript" src="--><?php //echo get_template_directory_uri(); ?><!--/js/jquery.textillate.js"></script>-->
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/style.css"/>
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/font-awesome.min.css"/>
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/animate.css">
+<!--    <link rel="stylesheet" href="--><?php //echo get_template_directory_uri(); ?><!--/css/animate.css">-->
     <title><?php the_title(); ?></title>
+    <?php wp_head(); ?>
 </head>
 <header class="article_header">
     <div class="bg-mob"></div>
@@ -150,8 +151,11 @@
                     <div class="article_info">
                         <div class="article_date"><?php the_date('j F Y'); ?></div>
                         <div class="article_share">
+                            <div id="social-share" style="display: none;">
+                                <?php echo do_shortcode('[Sassy_Social_Share]') ?>
+                            </div>
                             <span class="share">Поделиться</span>
-                            <img src="<?php echo get_template_directory_uri(); ?>/img/share.png" alt="Share">
+                            <img id="share-button" src="<?php echo get_template_directory_uri(); ?>/img/share.png" alt="Share">
                         </div>
                     </div>
                     <div class="article_quest">
@@ -259,7 +263,13 @@
                     </div>
                 </a>
             </div>
-            <a href="#"><div class="btn btn-grey">Читать все статьи</div></a>
+            <a href="/all-articles"><div class="btn btn-grey">Читать все статьи</div></a>
         </div>
     </div>
-</body>
+    <script>
+        $(document).ready(function () {
+            $('.article_share').on('click', function () {
+                $('#social-share').toggle("blind");
+            });
+        });
+    </script>
