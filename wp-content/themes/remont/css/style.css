@@ -1147,9 +1147,9 @@ footer   {
     align-self: flex-end;
     margin-bottom: 50px;
 }
-.article_text p {
-    margin: 30px 0;
-}
+/*.article_text p {*/
+    /*margin: 30px 0;*/
+/*}*/
 .article_text img {
     width: 100%;
     margin: 25px 0;
@@ -1160,6 +1160,7 @@ footer   {
     color: #333333;
 }
 .article_vstavka {
+    justify-content: flex-start;
     display: flex;
     width: 95%;
     margin: 70px 0;
@@ -1170,7 +1171,7 @@ footer   {
     margin: 0px 30px;
 }
 .article_vstavka h3 {
-    font-family: Montserrat-Medium;
+    font-family: Montserrat-Bold;
     font-style: italic;
     color: #333333;
     font-size: 30px;
