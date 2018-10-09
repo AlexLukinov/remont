@@ -1831,8 +1831,8 @@ input[type="text"]::placeholder { color: #cccccc; }
         margin: 12px;
     }
     .blog_card {
-        width: 100%;
-        margin: 10px;
+        width: 320px;
+        margin: auto;
         height: 700px;
     }
     .blog_caption h2 {
@@ -1922,6 +1922,7 @@ input[type="text"]::placeholder { color: #cccccc; }
         justify-content: center;
         align-items: center;
         align-self: center;
+        margin-top: 60px;
     }
     .shadow_modal {
         margin-top: 30px;
@@ -1944,7 +1945,7 @@ input[type="text"]::placeholder { color: #cccccc; }
         width: 80%;
     }
     .article_pagination {
-        width: 95%;
+        width: 90%;
         margin: auto;
     }
     .article_caption h1 {
@@ -1996,9 +1997,6 @@ input[type="text"]::placeholder { color: #cccccc; }
         justify-content: center;
         height: auto;
     }
-    /*.blog_card {*/
-        /*width: 50%;*/
-    /*}*/
     .foto-avtor_name {
         display: flex;
         font-family: Montserrat-Medium;
@@ -2060,6 +2058,13 @@ input[type="text"]::placeholder { color: #cccccc; }
     .menu_titr_trans {
         border: none;
     }
+    a .btn-grey {
+        margin: 40px auto;
+    }
+    .article_body .blog_pagination {
+        width: 100%;
+        margin-top: 0;
+    }
 }
 @media (max-width: 584.99px) {
     h2 {
@@ -2081,6 +2086,7 @@ input[type="text"]::placeholder { color: #cccccc; }
     }
     .article_info {
         height: 70px;
+        width: 50%;
     }
     .bg-mob {
         height: 40px;
@@ -2105,6 +2111,7 @@ input[type="text"]::placeholder { color: #cccccc; }
         margin: 30px auto;
     }
     .blog_card {
+        width: 280px;
         height: 600px;
     }
     .blog_block_article .blog_card .blog_card_text p {
@@ -2112,6 +2119,24 @@ input[type="text"]::placeholder { color: #cccccc; }
     }
     .blog_section {
         height: 1080px;
+    }
+    .blog_block_article {
+        width: 90%;
+    }
+    .pagination_prev, .pagination_next {
+        width: 155px;
+    }
+    .prev_article, .next_article {
+        font-size: 8px;
+    }
+    .article_body {
+        width: 90%;
+    }
+    .article_body .blog_pagination {
+        display: none;
+    }
+    .shadow {
+        margin-top: 45px;
     }
 }
 @media only screen
