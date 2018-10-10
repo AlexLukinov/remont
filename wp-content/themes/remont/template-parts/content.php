@@ -11,15 +11,11 @@
             integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl"
             crossorigin="anonymous">
     </script>
-<!--    <script src='js/anime.min.js'></script>-->
-<!--    <script src='js/path-slider.min.js'></script>-->
-<!--    <script src="--><?php //echo get_template_directory_uri(); ?><!--/js/index.js"></script>-->
-<!--    <script type="text/javascript" src="--><?php //echo get_template_directory_uri(); ?><!--/js/jquery.lettering.js"></script>-->
-<!--    <script type="text/javascript" src="--><?php //echo get_template_directory_uri(); ?><!--/js/jquery.fullpage.min.js"></script>-->
-<!--    <script type="text/javascript" src="--><?php //echo get_template_directory_uri(); ?><!--/js/jquery.textillate.js"></script>-->
+    <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/menu.js"></script>
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/jquery-ui.css">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/animate.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/style.css"/>
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/font-awesome.min.css"/>
-<!--    <link rel="stylesheet" href="--><?php //echo get_template_directory_uri(); ?><!--/css/animate.css">-->
     <title><?php the_title(); ?></title>
     <?php wp_head(); ?>
 </head>
@@ -74,11 +70,11 @@
             <div class="menu_wrapper">
                 <div class="logo logo_menu_mob" >MASTER GADGET</div>
                 <nav>
-                    <a href="/">Главная</a>
-                    <a href="#">Услуги</a>
-                    <a href="#">О нас</a>
-                    <a href="#">Контакты</a>
-                    <a href="#">Блог</a>
+                    <a class="menu-item" href="/#">Главная</a>
+                    <a class="menu-item" href="/#uslugi">Услуги</a>
+                    <a class="menu-item" href="/#about-us">О нас</a>
+                    <a class="menu-item" href="/#contacts">Контакты</a>
+                    <a class="menu-item" href="/#blog">Блог</a>
                 </nav>
                 <div class="menu_contacts">
                     <a href="#" class="menu_titr zvoni">
