@@ -18,6 +18,7 @@
     <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/viewportchecker.min.js"></script>
     <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/anime.min.js"></script>
     <script type="text/javascript" src='<?php echo get_template_directory_uri(); ?>/js/swiper.min.js'></script>
+    <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/menu.js"></script>
     <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/index.js"></script>
     <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery-ui.min.js"></script>
     <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/ajax-functions.js"></script>
@@ -41,11 +42,11 @@
         <div class="menu_wrapper">
             <div class="logo logo_menu_mob">MASTER GADGET</div>
             <nav>
-                <a href="/">Главная</a>
-                <a href="#uslugi">Услуги</a>
-                <a href="#about-us">О нас</a>
-                <a href="#contacts">Контакты</a>
-                <a href="#blog">Блог</a>
+                <a class="menu-item" href="#">Главная</a>
+                <a class="menu-item" href="#uslugi">Услуги</a>
+                <a class="menu-item" href="#about-us">О нас</a>
+                <a class="menu-item" href="#contacts">Контакты</a>
+                <a class="menu-item" href="#blog">Блог</a>
             </nav>
             <div class="menu_contacts">
                 <a href="#" class="menu_titr zvoni">

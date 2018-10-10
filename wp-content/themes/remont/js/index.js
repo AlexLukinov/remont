@@ -1,8 +1,6 @@
 $(document).ready(function() { // вся мaгия пoсле зaгрузки стрaницы
     var isMobile = window.matchMedia("only screen and (max-width: 768px)").matches;
 
-    initHamburgerMenuClick();
-
     initModals();
 
     initWhiteDivSize();
@@ -351,16 +349,6 @@ $(document).ready(function() { // вся мaгия пoсле зaгрузки с�
 
         return new Swiper(".swiper-container", swiperOptions);
     }
-
-    function initHamburgerMenuClick() {
-        $(".menu").on('click',function() {
-            $('.hamburgerIcon').first().toggleClass("open");
-            $('.hamburgerIconArticle').first().toggleClass("open");
-            $('#menu').toggleClass("open-menu");
-            $(this).toggleClass("menu_bg")
-        });
-    }
-
 
     function initModals() {
         // модальное окно
