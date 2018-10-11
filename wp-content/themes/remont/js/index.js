@@ -87,7 +87,7 @@ $(document).ready(function() { // вся мaгия пoсле зaгрузки с�
     if (isMobile) {
         activeSwiperSlide.width('77%');
     } else {
-        activeSwiperSlide.width('44%');
+        activeSwiperSlide.width('47%');
     }
 
     var currHeaderSlide = 1;

@@ -424,6 +424,55 @@ a .btn:hover:before, .btn_read:hover:before {
     left: 0%;
     z-index: -1;
 }
+#next-review, #prev-review{
+    position: relative;
+}
+#next-review:before {
+    position: absolute;
+    content: '';
+    width: 0px;
+    height: 48px;
+    top: 0;
+    background-color: #333333;
+    right: auto;
+    left: 0;
+    z-index: 1;
+    transition: all 300ms ease;
+    color: white;
+}
+#next-review:hover:before {
+    position: absolute;
+    content: '';
+    width: 48px;
+    height: 48px;
+    background-color: #333333;
+    top: 0%;
+    left: 0%;
+    z-index: -1;
+}
+#prev-review:before {
+    position: absolute;
+    content: '';
+    width: 0px;
+    height: 48px;
+    top: 0;
+    background-color: #333333;
+    left: auto;
+    right: 0;
+    z-index: 1;
+    transition: all 300ms ease;
+    color: white;
+}
+#prev-review:hover:before {
+    position: absolute;
+    content: '';
+    width: 48px;
+    height: 48px;
+    background-color: #333333;
+    top: 0%;
+    right: 0%;
+    z-index: -1;
+}
 .slider_progress {
     width: 20%;
     display: flex;
@@ -506,7 +555,7 @@ a .phone:hover {
     font-size: 10px;
     color: #cccccc;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 3px;
 }
 .services_content {
     display: flex;
@@ -714,7 +763,8 @@ a .phone:hover {
 .section_mini {
     margin: auto;
     width: 65%;
-    height: 70vh;
+    height: 90vh;
+    align-items: center;
 }
 .number {
     font-family: Montserrat-Bold;
@@ -956,7 +1006,7 @@ a .phone:hover {
     display: flex;
     flex-direction: column;
     width: 32%;
-    height: 625px;
+    height: 580px;
     justify-content: space-between;
     border: 1px solid #cccccc;
     align-items: center;
@@ -1247,7 +1297,7 @@ z-index: 40;
     align-items: center;
     position: fixed;
     top: 0;
-    z-index: 20;
+    z-index: 1000;
 }
 
 .modal_left {
@@ -1289,6 +1339,9 @@ z-index: 40;
 .social_modal a {
     color: white;
     font-size: 10px;
+}
+.social_modal a:hover {
+    color: #ffc003;
 }
 .modal_form_content {
     display: flex;
@@ -2190,7 +2243,7 @@ input[type="text"]::placeholder { color: #cccccc; }
 @media only screen
 and (min-width : 1919px) {
     h2  {
-        font-size: 80px;
+        font-size: 70px;
     }
     .logo {
         font-size: 13px;
@@ -2211,7 +2264,7 @@ and (min-width : 1919px) {
         font-size: 12px;
     }
     h6 {
-        font-size: 16px;
+        font-size: 18px;
     }
     .card_caption_bg {
         height: 280px;
@@ -2222,7 +2275,9 @@ and (min-width : 1919px) {
     .contacts_social a {
         font-size: 16px;
     }
-
+    .h2-block {
+        font-size: 80px;
+    }
     .article_body {
         margin: 25px auto;
     }
@@ -2232,6 +2287,12 @@ and (min-width : 1919px) {
     }
     .blog_card {
         height: 650px;
+    }
+    .plast_content h2, .blog_caption h2 {
+        font-size: 70px;
+    }
+    .reviews {
+        height: 90vh;
     }
 }
 .hidden{
