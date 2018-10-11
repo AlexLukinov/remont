@@ -15,7 +15,7 @@
             crossorigin="anonymous">
     </script>
     <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/anime.min.js"></script>
-    <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/index.js"></script>
+    <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/menu.js"></script>
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/style.css"/>
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/font-awesome.min.css"/>
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/animate.css">
@@ -40,13 +40,11 @@
     <div class="shadow">
         <div class="article_head_mob">
             <div class="flex-img">
-                <img src="img/arrow-back.png" alt="back">
+                <img src="<?php echo get_template_directory_uri(); ?>/img/arrow-back.png" alt="back">
             </div>
-            <div class="article_avatar">
-                <div class="avatar_foto"></div>
-            </div>
+            <div class="logo logo_menu_mob" style="color: #1c1c1c; align-self: center">MASTER GADGET</div>
             <div class="flex-img">
-                <img src="img/share.png" alt="Share">
+                <img src="<?php echo get_template_directory_uri(); ?>/img/phone-icon.png" alt="phone">
             </div>
         </div>
     </div>

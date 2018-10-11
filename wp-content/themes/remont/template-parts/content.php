@@ -19,20 +19,7 @@
     <title><?php the_title(); ?></title>
     <?php wp_head(); ?>
 </head>
-<header class="article_header">
-    <div class="bg-mob"></div>
-    <div class="menu">
-        <div class="hamburgerIcon"></div>
-    </div>
-    <div class="header_info">
-        <div class="info">
-            <div>г. Ялта</div>
-            <div class="number_tel">+7 (978) 042-82-62</div>
-        </div>
-    </div>
-</header>
 <body>
-
     <header class="article_header">
         <!--<div class="bg"></div>-->
         <div class="bg-mob"></div>
