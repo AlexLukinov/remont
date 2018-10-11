@@ -147,7 +147,7 @@ p {
     width: 91.5%;
 }
 .open-menu {
-    display: flex!important;
+    display: flex;
     position: absolute;
     top: 0;
     z-index: 20;
@@ -2353,4 +2353,19 @@ nav a:visited, .menu_contacts a.menu_titr:visited, .footer_right a:visited {
 }
 nav a:hover {
     color: #ffc003;
+}
+
+#menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#menu-div {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 20;
 }

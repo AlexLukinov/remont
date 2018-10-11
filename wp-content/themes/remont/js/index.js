@@ -10,6 +10,7 @@ $(document).ready(function() { // вся мaгия пoсле зaгрузки с�
     $('#ok-modal').click(function () {
         $('#thank_application').css('display', 'none');
     });
+
     var uslugiCoordinateTop = $('#uslugi').offset().top;
     var uslugiCoordinateBottom = $('#uslugi').height() + uslugiCoordinateTop;
     var aboutUsCoordinateTop = $('#about-us').offset().top;
@@ -27,39 +28,28 @@ $(document).ready(function() { // вся мaгия пoсле зaгрузки с�
     $(window).scroll(function(){
         var currCoordinate = $(window).scrollTop();
         if (currCoordinate >= 0 && currCoordinate < uslugiCoordinateTop){
-            $('#item_circle1').addClass('active');
-            $('#item_circle2').removeClass('active');
-            $('#item_circle3').removeClass('active');
-            $('#item_circle4').removeClass('active');
-            $('#item_circle5').removeClass('active');
+            setMainSliderActiveDot(1);
         }
         if (currCoordinate >= uslugiCoordinateTop && currCoordinate<= uslugiCoordinateBottom){
-            $('#item_circle2').addClass('active');
-            $('#item_circle1').removeClass('active');
-            $('#item_circle3').removeClass('active');
-            $('#item_circle4').removeClass('active');
-            $('#item_circle5').removeClass('active');
+            setMainSliderActiveDot(2);
         }
         if (currCoordinate >= aboutUsCoordinateTop && currCoordinate<= aboutUsCoordinateBottom){
-            $('#item_circle3').addClass('active');
-            $('#item_circle1').removeClass('active');
-            $('#item_circle2').removeClass('active');
-            $('#item_circle4').removeClass('active');
-            $('#item_circle5').removeClass('active');
+            setMainSliderActiveDot(3);
         }
         if (currCoordinate >= contactsCoordinateTop && currCoordinate<= contactsCoordinateBottom){
-            $('#item_circle4').addClass('active');
-            $('#item_circle1').removeClass('active');
-            $('#item_circle2').removeClass('active');
-            $('#item_circle3').removeClass('active');
-            $('#item_circle5').removeClass('active');
+            setMainSliderActiveDot(4);
         }
         if (currCoordinate >= blogCoordinateTop && currCoordinate<= blogCoordinateBottom){
-            $('#item_circle5').addClass('active');
+            setMainSliderActiveDot(5);
+        }
+
+        function setMainSliderActiveDot(dotNumber) {
+            $('#item_circle5').removeClass('active');
             $('#item_circle1').removeClass('active');
             $('#item_circle2').removeClass('active');
             $('#item_circle3').removeClass('active');
             $('#item_circle4').removeClass('active');
+            $('#item_circle' + dotNumber).addClass('active');
         }
 
         if (currCoordinate >= (appleImgCoordinate - 200) && !appleImgAlreadyShown) {
@@ -91,8 +81,6 @@ $(document).ready(function() { // вся мaгия пoсле зaгрузки с�
     }
 
     var currHeaderSlide = 1;
-
-    // work with article slider
     var currArticleSlide = 1;
     var currReviewSlide = 1;
     

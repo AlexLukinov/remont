@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="keywords" content="ремонт компьютеров, компьютерная техника">
     <script src="<?php echo get_template_directory_uri(); ?>/js/jquery.min.js"></script>
+    <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery-ui.min.js"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js"
             integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl"
             crossorigin="anonymous">
@@ -20,6 +21,12 @@
     <?php wp_head(); ?>
 </head>
 <body>
+
+<?php
+    set_query_var( 'isHome', false );
+    get_template_part( 'template-parts/menu' );
+?>
+
     <header class="article_header">
         <!--<div class="bg"></div>-->
         <div class="bg-mob"></div>
@@ -53,46 +60,6 @@
         <div class="menu menu_article">
             <div class="hamburgerIcon hamburgerIconArticle"></div>
         </div>
-        <div id="menu" class="animated fadeIn" style="display: none">
-            <div class="menu_wrapper">
-                <div class="logo logo_menu_mob" >MASTER GADGET</div>
-                <nav>
-                    <a class="menu-item" href="/#">Главная</a>
-                    <a class="menu-item" href="/#uslugi">Услуги</a>
-                    <a class="menu-item" href="/#about-us">О нас</a>
-                    <a class="menu-item" href="/#contacts">Контакты</a>
-                    <a class="menu-item" href="/#blog">Блог</a>
-                </nav>
-                <div class="menu_contacts">
-                    <a href="#" class="menu_titr zvoni">
-                        <div class="menu_cap">ЗВОНИ:</div>
-                        <div class="menu_name">+7 (978) 042-82-62</div>
-                    </a>
-                    <a href="#" class="menu_titr">
-                        <div class="menu_cap">ДИЗАЙНЕР САЙТА:</div>
-                        <div class="menu_name">Helen Tihomolova</div>
-                    </a>
-                    <a href="#" class="menu_titr">
-                        <div class="menu_cap">РАЗРАБОТЧИК:</div>
-                        <div class="menu_name">Ekaterina Lukinova</div>
-                    </a>
-                </div>
-                <div class="menu_social">
-                    <div class="contacts_social">
-                        <a href="#">Vk</a>
-                        <a href="#">Instagram</a>
-                    </div>
-                    <div class="contacts_social">
-                        <a href="#">Telegram</a>
-                        <a href="#">WhatsApp</a>
-                        <a href="#">Viber</a>
-                    </div>
-                    <div class="year">2018</div>
-                </div>
-            </div>
-        </div>
-
-
 
 
         <div class="article_body">
