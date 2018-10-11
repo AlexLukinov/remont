@@ -162,7 +162,6 @@
         <div class="item_circle" id="item_circle4"></div>
         <div class="item_circle" id="item_circle5"></div>
     </div>
-    <p class="phone-p_mobile">Заказать звонок</p>
     <a href="#">
         <div id="phone-button" class="phone ">
             <img class="img_phone" src="<?php echo get_template_directory_uri(); ?>/img/phone.png">
@@ -365,7 +364,7 @@
 
     </div>
     <div class="reviews_pagination">
-        <a id="prev-review" href="#"><div class="rev-left"><img src="<?php echo get_template_directory_uri(); ?>/img/rev-left.png" alt=""></div></a>
+        <a id="prev-review" href="#"><div class="rev-left prev-animate"><img src="<?php echo get_template_directory_uri(); ?>/img/rev-left.png" alt=""></div></a>
         <div class="slider_progress rev-pag">
             <div id="reviews-curr-slide" class="slider_number">01</div>
             <svg width="144" height="1">
@@ -374,7 +373,7 @@
             </svg>
             <div id="reviews-count" class="slider_number">04</div>
         </div>
-        <a id="next-review" href="#"><div class="rev-right"><img src="<?php echo get_template_directory_uri(); ?>/img/rev-right.png" alt=""></div></a>
+        <a id="next-review" href="#"><div class="rev-right next-animate"><img src="<?php echo get_template_directory_uri(); ?>/img/rev-right.png" alt=""></div></a>
     </div>
     <a href="#" id="rev-a"><div class="btn">Оставить отзыв</div></a>
 </section>
@@ -409,7 +408,7 @@
             </div>
             <div class="contacts-item">
                 <div class="contacts-item_caption">E-mail</div>
-                <div class="contacts-item_content">info@air.agency</div>
+                <div class="contacts-item_content">mg.prof@ya.ru</div>
             </div>
         </div>
         <div class="contacts-right">
@@ -492,7 +491,7 @@
 
     </div>
     <div class="reviews_pagination blog_pagination">
-        <a id="prev-article" href="#"><div class="rev-left"><img src="<?php echo get_template_directory_uri(); ?>/img/rev-left.png" alt=""></div></a>
+        <a id="prev-article" href="#"><div class="rev-left prev-animate"><img src="<?php echo get_template_directory_uri(); ?>/img/rev-left.png" alt=""></div></a>
         <div class="slider_progress rev-pag">
             <div id="articles-curr-slide" class="slider_number">01</div>
             <svg width="144" height="1">
@@ -501,7 +500,7 @@
             </svg>
             <div id="articles-count" class="slider_number">04</div>
         </div>
-        <a id="next-article" href="#"><div class="rev-right"><img src="<?php echo get_template_directory_uri(); ?>/img/rev-right.png" alt=""></div></a>
+        <a id="next-article" href="#"><div class="rev-right next-animate"><img src="<?php echo get_template_directory_uri(); ?>/img/rev-right.png" alt=""></div></a>
     </div>
     <a href="/all-articles"><div class="btn btn-grey">Читать все статьи</div></a>
 </section>
