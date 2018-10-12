@@ -19,6 +19,8 @@
     <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/anime.min.js"></script>
     <script type="text/javascript" src='<?php echo get_template_directory_uri(); ?>/js/swiper.min.js'></script>
     <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/menu.js"></script>
+    <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/modals.js"></script>
+    <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/scroll-events.js"></script>
     <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/index.js"></script>
     <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery-ui.min.js"></script>
     <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/ajax-functions.js"></script>
@@ -109,10 +111,10 @@
         </div>
         <div class="slider_progress">
             <a id="swiper-button-prev" href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/arrow-left.png" alt=""></a>
-            <div id="curr-slide-number" class="slider_number">01</div>
-            <svg width="144" height="1">
+            <div id="headers-curr-slide" class="slider_number">01</div>
+            <svg id="header-svg" width="144" height="1">
                 <path class="bg_svg" stroke="black" d="M0 10, 144 10"></path>
-                <path id="line" class="meter" stroke="#ffc100" d="M0 0, 36 10" style="stroke-dashoffset: 144;"></path>
+                <path id="headers-line" class="meter" stroke="#ffc100" d="M0 0, 36 10" style="stroke-dashoffset: 144;"></path>
             </svg>
             <div class="slider_number">04</div>
             <a id="swiper-button-next" href="#"><img src="<?php echo get_template_directory_uri(); ?>/img/arrow-right.png" alt=""></a>
@@ -331,7 +333,7 @@
         <a id="prev-review" href="#"><div class="rev-left"><img src="<?php echo get_template_directory_uri(); ?>/img/rev-left.png" alt=""></div></a>
         <div class="slider_progress rev-pag">
             <div id="reviews-curr-slide" class="slider_number">01</div>
-            <svg width="144" height="1">
+            <svg id="review-svg" width="144" height="1">
                 <path class="bg_svg" stroke="black" d="M0 10, 144 10"></path>
                 <path id="reviews-line" class="meter" stroke="#ffc100" d="M0 0, 36 10" style="stroke-dashoffset: 144;"></path>
             </svg>
@@ -423,7 +425,7 @@
                 $articles->the_post();
                 ?>
 
-                <div id="blog-card<?= $index; ?>" style="display: none;" class="blog_card">
+                <div id="article-card<?= $index; ?>" style="display: none;" class="blog_card">
                     <div class="blog_card_body">
                         <a href="<?= get_post_permalink(); ?>">
                             <?php the_post_thumbnail(); ?></a>
@@ -458,7 +460,7 @@
         <a id="prev-article" href="#"><div class="rev-left"><img src="<?php echo get_template_directory_uri(); ?>/img/rev-left.png" alt=""></div></a>
         <div class="slider_progress rev-pag">
             <div id="articles-curr-slide" class="slider_number">01</div>
-            <svg width="144" height="1">
+            <svg id="article-svg" width="144" height="1">
                 <path class="bg_svg" stroke="black" d="M0 10, 144 10"></path>
                 <path id="articles-line" class="meter" stroke="#ffc100" d="M0 0, 36 10" style="stroke-dashoffset: 144;"></path>
             </svg>
