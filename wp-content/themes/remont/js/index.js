@@ -1,6 +1,10 @@
 $(document).ready(function() { // вся мaгия пoсле зaгрузки стрaницы
     var isMobile = window.matchMedia("only screen and (max-width: 768px)").matches;
 
+    // $( window ).resize(function() {
+    //     $( "#zayavka_text" ).css('height', '30%');
+    // });
+
     initWhiteDivSize();
 
     $('#white-div-watch').width($('#white-div-watch').width() + 114);
@@ -29,12 +33,12 @@ $(document).ready(function() { // вся мaгия пoсле зaгрузки с�
     // all cards are displayed none, display flex first slides
     setTimeout(function () {
         if (isMobile) {
-            $('#blog-card1').css('display', 'flex');
+            $('#article-card1').css('display', 'flex');
             $('#review-card1').css('display', 'flex');
         } else {
-            $('#blog-card1').css('display', 'flex');
-            $('#blog-card2').css('display', 'flex');
-            $('#blog-card3').css('display', 'flex');
+            $('#article-card1').css('display', 'flex');
+            $('#article-card2').css('display', 'flex');
+            $('#article-card3').css('display', 'flex');
             $('#review-card1').css('display', 'flex');
             $('#review-card2').css('display', 'flex');
             $('#review-card3').css('display', 'flex');
@@ -53,19 +57,23 @@ $(document).ready(function() { // вся мaгия пoсле зaгрузки с�
     var reviewsSlidesCount = Math.floor(reviewsCount / 4) + 1;
 
     function calcOneDevision(el, slidesCount) {
+        console.log(el.width());
+        console.log(slidesCount);
         return el.width() / slidesCount;
     }
 
     function getOneDevisionByEl(el) {
         switch (el) {
             case 'article':
-                return calcOneDevision("#article-svg", articlesSlidesCount);
+                console.log('article: ' + calcOneDevision($("#article-svg"), articlesSlidesCount));
+                return calcOneDevision($("#article-svg"), articlesSlidesCount);
                 break;
             case 'review':
-                return calcOneDevision("#review-svg", reviewsSlidesCount);
+                console.log('review: ' + calcOneDevision($("#review-svg"), reviewsSlidesCount));
+                return calcOneDevision($("#review-svg"), reviewsSlidesCount);
                 break;
             case 'header':
-                return calcOneDevision("#header-svg", 4);
+                return calcOneDevision($("#header-svg"), 4);
                 break;
         }
     }

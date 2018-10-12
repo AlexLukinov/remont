@@ -11,8 +11,10 @@ $(document).ready(function() {
             $('.hamburgerIconArticle').first().toggleClass("open");
             if (isMenuOpened) {
                 menuDiv.effect("slide", { mode : "hide", direction:"left" , distance: windowWidth}, 800);
+                // menuDiv.hide("slide", 1000);
             } else {
                 menuDiv.effect("slide", { mode : "show", direction:"left" , distance: windowWidth}, 800);
+                // menuDiv.show("slide", 1000);
             }
             $(this).toggleClass("menu_bg");
             isMenuOpened = !isMenuOpened;
