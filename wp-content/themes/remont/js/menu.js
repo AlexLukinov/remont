@@ -10,11 +10,9 @@ $(document).ready(function() {
             $('.hamburgerIcon').first().toggleClass("open");
             $('.hamburgerIconArticle').first().toggleClass("open");
             if (isMenuOpened) {
-                menuDiv.effect("slide", { mode : "hide", direction:"left" , distance: windowWidth}, 800);
-                // menuDiv.hide("slide", 1000);
+                menuDiv.effect("show", { mode : "hide", direction:"left" , distance: windowWidth}, 400);
             } else {
-                menuDiv.effect("slide", { mode : "show", direction:"left" , distance: windowWidth}, 800);
-                // menuDiv.show("slide", 1000);
+                menuDiv.effect("show", { mode : "show", direction:"left" , distance: windowWidth}, 400);
             }
             $(this).toggleClass("menu_bg");
             isMenuOpened = !isMenuOpened;

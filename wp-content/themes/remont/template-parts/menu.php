@@ -1,6 +1,6 @@
 <div id="menu-div" style="display: none;">
     <div id="menu" class="open-menu">
-        <div class="menu_wrapper">
+        <div class="menu_wrapper ">
             <div class="logo logo_menu_mob">MASTER GADGET</div>
             <nav>
                 <a class="menu-item" href="<?php if (!$isHome) echo '/'; ?>#">Главная</a>

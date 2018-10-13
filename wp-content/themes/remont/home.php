@@ -127,7 +127,6 @@
         <div class="item_circle" id="item_circle4"></div>
         <div class="item_circle" id="item_circle5"></div>
     </div>
-    <p class="phone-p_mobile">Заказать звонок</p>
     <a href="#">
         <div id="phone-button" class="phone ">
             <img class="img_phone" src="<?php echo get_template_directory_uri(); ?>/img/phone.png">
@@ -330,7 +329,7 @@
 
     </div>
     <div class="reviews_pagination">
-        <a id="prev-review" href="#"><div class="rev-left"><img src="<?php echo get_template_directory_uri(); ?>/img/rev-left.png" alt=""></div></a>
+        <a id="prev-review" href="#"><div class="rev-left prev-animate"><img src="<?php echo get_template_directory_uri(); ?>/img/rev-left.png" alt=""></div></a>
         <div class="slider_progress rev-pag">
             <div id="reviews-curr-slide" class="slider_number">01</div>
             <svg id="review-svg" width="144" height="1">
@@ -339,7 +338,7 @@
             </svg>
             <div id="reviews-count" class="slider_number">04</div>
         </div>
-        <a id="next-review" href="#"><div class="rev-right"><img src="<?php echo get_template_directory_uri(); ?>/img/rev-right.png" alt=""></div></a>
+        <a id="next-review" href="#"><div class="rev-right next-animate"><img src="<?php echo get_template_directory_uri(); ?>/img/rev-right.png" alt=""></div></a>
     </div>
     <a href="#" id="rev-a"><div class="btn">Оставить отзыв</div></a>
 </section>
@@ -374,7 +373,7 @@
             </div>
             <div class="contacts-item">
                 <div class="contacts-item_caption">E-mail</div>
-                <div class="contacts-item_content">info@air.agency</div>
+                <div class="contacts-item_content">mg.prof@ya.ru</div>
             </div>
         </div>
         <div class="contacts-right">
@@ -386,7 +385,7 @@
     </div>
     <div class="block_card">
         <div class="card">
-            <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A2e854d7a2a0dc815c9d788ccfbbf2176d3eccde7cdf3a663f30eedaec71b8f33&amp;source=constructor" width="100%" height="400" frameborder="0"></iframe>
+            <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A2e854d7a2a0dc815c9d788ccfbbf2176d3eccde7cdf3a663f30eedaec71b8f33&amp;source=constructor" width="100%" height="450" frameborder="0"></iframe>
         </div>
         <div class="contacts_social">
             <a href="https://www.instagram.com/mastergadget.service/">Instagram</a>
@@ -457,7 +456,7 @@
 
     </div>
     <div class="reviews_pagination blog_pagination">
-        <a id="prev-article" href="#"><div class="rev-left"><img src="<?php echo get_template_directory_uri(); ?>/img/rev-left.png" alt=""></div></a>
+        <a id="prev-article" href="#"><div class="rev-left prev-animate"><img src="<?php echo get_template_directory_uri(); ?>/img/rev-left.png" alt=""></div></a>
         <div class="slider_progress rev-pag">
             <div id="articles-curr-slide" class="slider_number">01</div>
             <svg id="article-svg" width="144" height="1">
@@ -466,7 +465,7 @@
             </svg>
             <div id="articles-count" class="slider_number">04</div>
         </div>
-        <a id="next-article" href="#"><div class="rev-right"><img src="<?php echo get_template_directory_uri(); ?>/img/rev-right.png" alt=""></div></a>
+        <a id="next-article" href="#"><div class="rev-right next-animate"><img src="<?php echo get_template_directory_uri(); ?>/img/rev-right.png" alt=""></div></a>
     </div>
     <a href="/all-articles"><div class="btn btn-grey">Читать все статьи</div></a>
 </section>
