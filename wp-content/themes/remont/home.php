@@ -544,7 +544,7 @@
     <div class="modal_form">
         <div class="shadow shadow_modal">
             <div class="article_head_mob">
-                <div class="flex-img">
+                <div class="flex-img close-modal">
                     <img src="<?php echo get_template_directory_uri(); ?>/img/arrow-back.png" alt="back">
                 </div>
                 <div class="logo logo_menu_mob logo_modal_mob" >MASTER GADGET</div>
