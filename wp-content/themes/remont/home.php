@@ -383,7 +383,7 @@
     </div>
     <div class="block_card">
         <div class="card">
-            <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A2e854d7a2a0dc815c9d788ccfbbf2176d3eccde7cdf3a663f30eedaec71b8f33&amp;source=constructor" width="100%" height="400" frameborder="0"></iframe>
+            <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A2e854d7a2a0dc815c9d788ccfbbf2176d3eccde7cdf3a663f30eedaec71b8f33&amp;source=constructor" width="100%" height="450" frameborder="0"></iframe>
         </div>
         <div class="contacts_social">
             <a href="https://www.instagram.com/mastergadget.service/">Instagram</a>
