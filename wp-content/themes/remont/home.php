@@ -494,7 +494,7 @@
     <div class="modal_form">
         <div class="shadow shadow_modal">
             <div class="article_head_mob">
-                <a href="#" class="flex-img">
+                <a href="#" class="flex-img close-modal">
                     <img src="<?php echo get_template_directory_uri(); ?>/img/arrow-back.png" alt="back">
                 </a>
                 <div class="logo logo_menu_mob logo_modal_mob" >MASTER GADGET</div>
@@ -524,7 +524,7 @@
 </div>
 <div class="modal animated fadeIn" id="reviews" style="display: none">
     <div class="modal_left">
-        <div class="close">
+        <div class="close close-modal">
             <img src="<?php echo get_template_directory_uri(); ?>/img/close.jpg" alt="Закрыть">
         </div>
         <div class="modal_content">

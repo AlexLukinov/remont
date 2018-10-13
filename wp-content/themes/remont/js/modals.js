@@ -7,6 +7,10 @@ $(document).ready(function() { // вся мaгия пoсле зaгрузки с�
         $('#thank_application').css('display', 'none');
     });
 
+    $('.close-modal').click(function () {
+        $('.modal').css('display', 'none');
+    });
+
     function initModals() {
         // модальное окно
         $("#review-modal").each( function(){
