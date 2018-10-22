@@ -192,30 +192,6 @@
                 endif;
                 ?>
             </div>
-            <div class="reviews_pagination blog_pagination">
-                <?php $nextPost = get_next_post(); ?>
-                <a href="<?= $nextPost->guid; ?>">
-                    <div class="pagination_prev">
-                        <img src="<?php echo get_template_directory_uri(); ?>/img/rev-left.png" alt="">
-                        <span class="prev_article">Предыдущий пост</span>
-                    </div>
-                </a>
-                <div class="slider_progress rev-pag">
-                    <div class="slider_number">01</div>
-                    <svg width="144" height="1">
-                        <path class="bg_svg" stroke="black" d="M0 10, 144 10"></path>
-                        <path class="meter" stroke="#ffc100" d="M0 0, 36 10" style="stroke-dashoffset: 144;"></path>
-                    </svg>
-                    <div class="slider_number">04</div>
-                </div>
-                <?php $previousPost = get_previous_post(); ?>
-                <a href="<?= $previousPost->guid; ?>">
-                    <div class="pagination_next">
-                        <span class="next_article">Следующий пост</span>
-                        <img src="<?php echo get_template_directory_uri(); ?>/img/rev-right.png" alt="">
-                    </div>
-                </a>
-            </div>
             <a href="/all-articles"><div class="btn btn-grey">Читать все статьи</div></a>
         </div>
     </div>

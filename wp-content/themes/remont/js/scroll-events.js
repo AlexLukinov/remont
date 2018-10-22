@@ -50,12 +50,12 @@ $(document).ready(function () {
     });
 
     function setActiveMenuItem(menuItemNumber) {
-        $('nav a:nth-child(1)').removeClass('active');
-        $('nav a:nth-child(2)').removeClass('active');
-        $('nav a:nth-child(3)').removeClass('active');
-        $('nav a:nth-child(4)').removeClass('active');
-        $('nav a:nth-child(5)').removeClass('active');
-        $('nav a:nth-child(' + menuItemNumber + ')').addClass('active');
+        // $('nav a:nth-child(1)').removeClass('active');
+        // $('nav a:nth-child(2)').removeClass('active');
+        // $('nav a:nth-child(3)').removeClass('active');
+        // $('nav a:nth-child(4)').removeClass('active');
+        // $('nav a:nth-child(5)').removeClass('active');
+        // $('nav a:nth-child(' + menuItemNumber + ')').addClass('active');
     }
 
     function setMainSliderActiveDot(dotNumber) {

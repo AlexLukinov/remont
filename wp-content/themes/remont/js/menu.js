@@ -10,9 +10,11 @@ $(document).ready(function() {
             $('.hamburgerIcon').first().toggleClass("open");
             $('.hamburgerIconArticle').first().toggleClass("open");
             if (isMenuOpened) {
-                menuDiv.effect("show", { mode : "hide", direction:"left" , distance: windowWidth}, 400);
+                menuDiv.animate({width: 'toggle'});
             } else {
-                menuDiv.effect("show", { mode : "show", direction:"left" , distance: windowWidth}, 400);
+                $('.menu_wrapper').first().addClass('fadeOut');
+                menuDiv.animate({width: 'toggle'});
+
             }
             $(this).toggleClass("menu_bg");
             isMenuOpened = !isMenuOpened;
