@@ -135,12 +135,19 @@ $(document).ready(function() { // вся мaгия пoсле зaгрузки с�
 
     const articlesCards = $('#blog .blog_card');
     const articlesCount = articlesCards.length;
+    var articlesNumberShow = 3;
 
     const reviewsCards = $('.reviews_block_item');
     const reviewsCount = reviewsCards.length;
+    var reviewsNumberShow = 4;
 
-    var articlesSlidesCount = Math.floor(articlesCount / 3) + 1;
-    var reviewsSlidesCount = Math.floor(reviewsCount / 4) + 1;
+    if (isMobile) {
+        var articlesSlidesCount = articlesCount;
+        var reviewsSlidesCount = reviewsCount;
+    } else {
+        var articlesSlidesCount = Math.floor(articlesCount / 3) + 1;
+        var reviewsSlidesCount = Math.floor(reviewsCount / 4) + 1;
+    }
 
     initSlider('article', articlesCards, articlesSlidesCount);
     listenSwitchSlideClick('article', articlesSlidesCount, currArticleSlide);
@@ -187,12 +194,13 @@ $(document).ready(function() { // вся мaгия пoсле зaгрузки с�
 
     // toggle visibility of cards on switch slides
     function handleCardsVisibility(cardEl, cards, currSlide) {
+        const cardsNumber = (cardEl == 'article') ? 3 : 4;
         cards.css('display', 'none');
         if (isMobile) {
             $('#' + cardEl + '-card' + currSlide).css('display', 'flex');
         } else {
-            for (let i = 0; i <= cards.length; i++) {
-                $('#' + cardEl + '-card' + (currSlide*3 - i)).css('display', 'flex');
+            for (let i = 0; i < cardsNumber; i++) {
+                $('#' + cardEl + '-card' + (currSlide * cardsNumber - i)).css('display', 'flex');
             }
         }
     }
@@ -214,7 +222,7 @@ $(document).ready(function() { // вся мaгия пoсле зaгрузки с�
 
     // get line element and set it length
     function handleSliderLine(line, length) {
-        if (length > sliderLineLenght * 0.95) {
+        if (length > sliderLineLength * 0.95) {
             length = sliderLineLength;
         }
         line.attr('d', 'M0 0, ' + length + ' 10');
@@ -240,19 +248,15 @@ $(document).ready(function() { // вся мaгия пoсле зaгрузки с�
     }
 
     function calcOneDevision(el, slidesCount) {
-        console.log(el.width());
-        console.log(slidesCount);
         return el.width() / slidesCount;
     }
 
     function getOneDevisionByEl(el) {
         switch (el) {
             case 'article':
-                console.log('article: ' + calcOneDevision($("#article-svg"), articlesSlidesCount));
                 return calcOneDevision($("#article-svg"), articlesSlidesCount);
                 break;
             case 'review':
-                console.log('review: ' + calcOneDevision($("#review-svg"), reviewsSlidesCount));
                 return calcOneDevision($("#review-svg"), reviewsSlidesCount);
                 break;
             case 'header':
