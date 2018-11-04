@@ -14,7 +14,16 @@ $(document).ready(function () {
     var watchImgAlreadyShown = false;
 
     $(window).scroll(function(){
+        var previousCoordinate = 0;
         var currCoordinate = $(window).scrollTop();
+
+        if (isMobile) {
+            if (currCoordinate > previousCoordinate) {
+                $('.article_header').first().hide();
+                previousCoordinate = currCoordinate;
+            }
+        }
+
         if (currCoordinate >= 0 && currCoordinate < uslugiCoordinateTop){
             setMainSliderActiveDot(1);
             setActiveMenuItem(1);

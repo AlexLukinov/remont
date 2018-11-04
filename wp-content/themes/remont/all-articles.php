@@ -11,6 +11,7 @@
     <meta name="keywords" content="ремонт компьютеров, компьютерная техника">
     <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery.min.js"></script>
     <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/modals.js"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js"
             integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl"
             crossorigin="anonymous">
@@ -47,10 +48,12 @@
     <div class="shadow">
         <div class="article_head_mob">
             <div class="flex-img">
-                <img src="<?php echo get_template_directory_uri(); ?>/img/arrow-back.png" alt="back">
+                <a href="/">
+                    <img src="<?php echo get_template_directory_uri(); ?>/img/arrow-back.png" alt="back">
+                </a>
             </div>
             <div class="logo logo_menu_mob" style="color: #1c1c1c; align-self: center">MASTER GADGET</div>
-            <div class="flex-img">
+            <div id="phone-button" class="flex-img">
                 <img src="<?php echo get_template_directory_uri(); ?>/img/phone-icon.png" alt="phone">
             </div>
         </div>
@@ -131,12 +134,62 @@
 <?php
     get_footer();
 ?>
+
+
+
+<!--модальные окна-->
+<div class="modal modal_application animated fadeIn" id="application" style="display: none">
+    <div class="modal_left">
+        <div class="close">
+            <img src="<?php echo get_template_directory_uri(); ?>/img/close.jpg" alt="Закрыть">
+        </div>
+        <div class="modal_content">
+            <div class="logo logo_modal">MASTER GADGET</div>
+            <h2>
+                Мы экономим ваше время и средства.
+                Всегда на связи!
+            </h2>
+            <div class="contacts_social social_modal">
+                <a href="https://www.instagram.com/mastergadget.service/">Instagram</a>
+                <a href="https://vk.com/mg.service">Vk</a>
+                <a href="https://t.me/mgadgetyalta">Telegram</a>
+                <a href="https://wa.me/79780428262">WhatsApp</a>
+                <a href="#">Viber</a>
+            </div>
+        </div>
+    </div>
+    <div class="modal_form">
+        <div class="shadow shadow_modal">
+            <div class="article_head_mob">
+                <a href="#" class="flex-img close-modal">
+                    <img src="<?php echo get_template_directory_uri(); ?>/img/arrow-back.png" alt="back">
+                </a>
+                <div class="logo logo_menu_mob logo_modal_mob" >MASTER GADGET</div>
+            </div>
+        </div>
+        <div class="modal_form_content">
+
+            <h3>
+                Расскажите нам о проблеме!
+            </h3>
+            <p>
+                Мы предоставляем услугу <span class="red_span">бесплатного</span> вызова курьера.
+                Так же Вы можете оставить заявку для консультации.
+                Мы вам перезвоним!
+            </p>
+            <!--            <form class="form_application" action="--><?php //echo esc_url( admin_url('admin-post.php') ); ?><!--" method="post">-->
+            <!--                <input type="hidden" name="action" value="zayavka_form">-->
+
+            <input id="zayavka_name" class="input" name="name" type="text" placeholder="Ваше имя">
+            <input id="zayavka_tel" class="input" name="number_tel" type="text" placeholder="Номер телефона">
+            <p class="textarea-p">Что случилось?</p>
+            <textarea id="zayavka_text" name="application" cols="1" rows="4"></textarea>
+            <button class="form_submit" id="zayavka-submit" value="Отправить">Отправить</button>
+            <!--            </form>-->
+        </div>
+    </div>
+</div>
+
+
+
 </body>
-
-
-
-
-
-
-
-

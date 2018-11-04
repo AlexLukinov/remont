@@ -1,7 +1,23 @@
 $(document).ready(function() {
+    var isMobile = window.matchMedia("only screen and (max-width: 768px)").matches;
     var isMenuOpened = false;
     var windowWidth = $(window).width();
     var menuDiv = $('#menu-div');
+    var previousCoordinate = 0;
+
+    $(window).scroll(function() {
+        var currCoordinate = $(window).scrollTop();
+
+        if (isMobile) {
+            var header = $('header').first();
+            if (currCoordinate > previousCoordinate) {
+                header.slideUp();
+            } else {
+                header.slideDown();
+            }
+            previousCoordinate = currCoordinate;
+        }
+    });
 
     initHamburgerMenuClick();
 
@@ -9,13 +25,14 @@ $(document).ready(function() {
         $(".menu").on('click',function() {
             $('.hamburgerIcon').first().toggleClass("open");
             $('.hamburgerIconArticle').first().toggleClass("open");
-            if (isMenuOpened) {
-                menuDiv.animate({width: 'toggle'});
-            } else {
-                $('.menu_wrapper').first().addClass('fadeOut');
-                menuDiv.animate({width: 'toggle'});
-
-            }
+            // if (isMenuOpened) {
+            //     menuDiv.animate({width: 'toggle'});
+            // } else {
+            //     $('.menu_wrapper').first().addClass('fadeOut');
+            //     menuDiv.animate({width: 'toggle'});
+            //
+            // }
+            menuDiv.toggle();
             $(this).toggleClass("menu_bg");
             isMenuOpened = !isMenuOpened;
         });

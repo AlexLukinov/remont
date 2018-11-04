@@ -15,10 +15,10 @@
     <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/menu.js"></script>
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/jquery-ui.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/animate.css">
+    <?php wp_head(); ?>
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/style.css"/>
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/font-awesome.min.css"/>
     <title><?php the_title(); ?></title>
-    <?php wp_head(); ?>
 </head>
 <body>
 
@@ -40,13 +40,18 @@
             </div>
         </div>
     </header>
+    <?php $author = get_post_meta( get_the_ID(), 'article_author', true ); ?>
     <div class="shadow shadow-margin">
         <div class="article_head_mob">
             <div class="flex-img">
                 <img src="<?php echo get_template_directory_uri(); ?>/img/arrow-back.png" alt="back">
             </div>
             <div class="article_avatar">
-                <div class="avatar_foto"></div>
+                <?php if ($author == 'а') { ?>
+                    <div class="avatar_foto avatar_foto_alena"></div>
+                <?php } else { ?>
+                    <div class="avatar_foto"></div>
+                <?php } ?>
             </div>
             <div class="flex-img">
                 <div id="social-share-mobile" style="display: none;">
@@ -81,7 +86,6 @@
             </div>
             <div class="article_head">
                 <div class="avatar">
-					<?php $author = get_post_meta( get_the_ID(), 'article_author', true ); ?>
 					<?php if ($author == 'а') { ?>
                         <div class="avatar_foto avatar_foto_alena"></div>
 					<?php } else { ?>
@@ -125,13 +129,6 @@
             </div>
 
             <div class="article_text">
-<!--                <div class="article_vstavka">-->
-<!--                    <img src="--><?php //echo get_template_directory_uri(); ?><!--/img/vstavka.png" alt="Умная мысль">-->
-<!--                    <h3>-->
-<!--                        Менее 1% сотрудников Google старше 40 лет. Это говорит о том, что-->
-<!--                        квалификацию стоит оценивать только по результату, а не по стажу работы.-->
-<!--                    </h3>-->
-<!--                </div>-->
                 <?php the_content(); ?>
             </div>
             <div class="foto-avtor_name">Photo by Daria Shevtsova from Pexels</div>
@@ -195,6 +192,8 @@
             <a href="/all-articles"><div class="btn btn-grey">Читать все статьи</div></a>
         </div>
     </div>
+
+
     <script>
         $(document).ready(function () {
             $('.img_share').on('click', function () {
