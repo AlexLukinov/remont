@@ -44,7 +44,9 @@
     <div class="shadow shadow-margin">
         <div class="article_head_mob">
             <div class="flex-img">
-                <img src="<?php echo get_template_directory_uri(); ?>/img/arrow-back.png" alt="back">
+                <a href="/">
+                    <img src="<?php echo get_template_directory_uri(); ?>/img/arrow-back.png" alt="back">
+                </a>
             </div>
             <div class="article_avatar">
                 <?php if ($author == 'а') { ?>
